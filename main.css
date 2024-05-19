@@ -1,18 +1,410 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..500&display=swap');
+@font-face {
+  font-family: "Chopper";
+  src:
+    local("Chopper"),
+    url("./media/fonts/Chopper.woff2") format("woff2"),
+    url("./media/fonts/Chopper.woff") format("woff");
+}
+
+:root {
+  --aspect-ratio: calc(3/2)
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
+  font-size: 16px;
 
-    margin: 0px;
-    border: 0px;
-    padding: 0px;
+  width: 100%;
+
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+
+  align-items: flex-start;
+}
+
+/* General classes */
+
+input[type="text"] {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2.3vh;
+}
+
+input[type="submit"], input[type="button"] {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.3vh;
+
+  border-radius: 5vh;
+  border: solid black 0.4vh;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  height: 4.5vh;
+  cursor: pointer;
+
+  transition: color 100ms, background-color 100ms;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+}
+
+.rounded-corners {
+  border-radius: 3vh;
+}
+
+.title {
+  font-family: "Chopper", serif;
+  font-size: 4vh;
+  padding-bottom: 1.5vh;
+}
+
+.title-small {
+  font-family: "Chopper", serif;
+  font-size: 3vh;
+  padding-bottom: 1.5vh;
+}
+
+.subtitle {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3vh;
+  padding-bottom: 2vh;
+}
+
+.subtitle-bold {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3vh;
+  padding-bottom: 2vh;
+}
+
+.small-subtitle {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2.0vh;
+}
+
+.normal-text {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2.3vh;
+}
+
+.normal-text-bold {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.3vh;
+}
+
+
+/* Specific classes  */
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: calc(100vh*var(--aspect-ratio));
+  background: white;
+  box-shadow: 0vh 0vh 2vh rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.content-box > .gap {
+  height: 10vh;
+}
+
+.logo-title {
+  height: 6vh;
+  padding-bottom: 4vh;
+}
+
+.newsletter {
+  display: flex;
+  justify-content: center;
+
+  padding-bottom: 12vh;
+}
+
+.newsletter > form {
+  box-sizing: border-box;
+  border: 0.4vh solid black;
+  border-radius: 5vh;
+
+  height: 4.5vh;
+  width: 80vh;
+
+  margin: 0vh;
+  display: flex;
+}
+
+.newsletter > form > input[type="text"] {
+  border: none;
+  background: transparent;
+  flex-grow: 1;
+  padding-left: 1.5vh;
+}
+
+.newsletter > form > input[type="text"]:focus {
+  outline: none;
+}
+
+.newsletter > form > input[type="submit"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: unset;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.section-characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-characters > .single-character {
+  height: 90vh;
+  width: calc(90vh*var(--aspect-ratio));
+  position: relative;
+}
+
+.section-characters > .single-character > img {
+  mix-blend-mode: multiply;
+  position: absolute;
+}
+
+.section-characters > .gio > div {
+  width: 40vh;
+  top: 16vh;
+  left: 48vh;
+  position: absolute;
+}
+
+.section-characters .gio-sitting {
+  height: 44vh;
+  top: 7vh;
+  left: 8vh;
+}
+.section-characters .gio-couch {
+  height: 39vh;
+  bottom: 2vh;
+  right: 6vh;
+}
+.section-characters .gio-crossarms {
+  height: 27vh;
+  bottom: 8vh;
+  left: 22vh;
+}
+.section-characters .gio-crosslegged {
+  height: 39vh;
+  top: 5vh;
+  right: 8vh;
+}
+
+.section-characters > .marco > div {
+  width: 40vh;
+  top: 11vh;
+  left: 41vh;
+  position: absolute;
+}
+
+.section-characters .marco-reading-map {
+  height: 45vh;
+  top: 43vh;
+  left: 60vh;
+}
+.section-characters .marco-sitting {
+  height: 34vh;
+  top: 52vh;
+  left: 13vh;
+}
+.section-characters .marco-standing-back {
+  height: 63vh;
+  top: 21vh;
+  left: 83vh;
+}
+.section-characters .marco-standing-front {
+  height: 63vh;
+  top: 5vh;
+  left: 109vh;
+}
+.section-characters .marco-sweating {
+  height: 37vh;
+  top: 11vh;
+  left: 2vh;
+}
+
+.section-contacts {
+  padding-top: 8vh;
+}
+
+.section-contacts > div {
+  text-align: center;
+}
+
+.section-contacts > .subtitle-bold {
+  padding-bottom: 0.5vh;
+}
+
+.section-contacts > .normal-text-bold {
+  padding-bottom: 3vh;
+}
+
+.section-contacts > .normal-text {
+  padding-bottom: 3vh;
+}
+
+.section-living-room > div {
+  background-color: black;
+}
+
+.section-living-room > div > img {
+  padding: 2vh;
+  height: 80vh;
+}
+
+.section-setting {
+  display: flex;
+  align-items: center;
+  padding-left: 20vh;
+  padding-right: 20vh;
+  gap: 10vh;
+}
+
+.section-setting > img {
+  height: 70vh;
+}
+
+.section-setting > div {
+  padding-bottom: 20vh;
+}
+
+.section-synopsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12vh;
+  padding-right: 12vh;
+  gap: 10vh;
+}
+
+.section-synopsis .gio {
+  height: 58vh;
+  align-self: flex-end;
+  padding-bottom: 2vh;
+}
+
+.section-synopsis .marco {
+  height: 80vh;
+  align-self: flex-end;
+  padding-left: 7vh;
+}
+
+.section-synopsis > div {
+  padding-bottom: 20vh;
+}
+
+.section-welcome {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 16vh;
+}
+
+.section-welcome .rounded-corners {
+  height: 85vh;
+}
+
+.section-welcome .normal-text {
+  padding-bottom: 15vh;
+  width: 38vh;
+}
+
+.sideburn {
+  background-image: url("./media/flower_pattern_big2.svg");
+  background-size: 32rem;
+  
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+.sideburn-right {
+  background-image: url("./media/flower_pattern_big2_right.svg");
+  background-position: 0% 1.5%;
+}
+
+.sideburn-left {
+  background-position: 100% 1.5%;
+}
+
+
+.section-team {
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8vh;
+}
+
+.team-member {
+  width: 90vh;
+  display: flex;
+  align-items: center;
+  gap: 10vh;
+}
+
+.team-member .subtitle-bold {
+  padding-bottom: 0vh;
+}
+
+.team-member > img {
+  height: 25vh;
+  border-radius: 100vh;
+}
+
+.team-member .socials {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  display: flex;
+  gap: 0.9vh;
+}
+
+.team-member .socials img {
+  outline: 0.3vh solid black;
+  outline-offset: -0.1vh;
+  border-radius: 10vh;
+  width: 3.5vh;
+
+  transition: outline-color 100ms, filter 100ms;
+}
+
+.team-member .socials img:hover {
+  outline-color: white;
+  filter: invert(1);
+}
+
+.team-member .normal-text-bold {
+  padding-bottom: 0.5vh;
 }
