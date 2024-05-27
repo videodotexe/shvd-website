@@ -8,6 +8,8 @@
     url("./media/fonts/Chopper.woff") format("woff");
 }
 
+
+
 :root {
   --aspect-ratio: calc(3/2)
 }
@@ -407,4 +409,66 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
 .team-member .normal-text-bold {
   padding-bottom: 0.5vh;
+}
+
+@media (max-aspect-ratio: 3/2) {
+
+  .rounded-corners {
+    border-radius: unset;
+    width: 100vw;
+    object-fit: cover;
+  }
+
+  .content-box {
+    padding-top: 5vh;
+    width: 100%;
+  }
+
+  .content-box > .gap {
+    height: unset;
+  }
+
+  .sideburn {
+    visibility: collapse;
+  }
+
+  .section-welcome {
+    gap: 5vh;
+    width: 100%;
+    height: unset;
+    flex-direction: column-reverse;
+  }
+
+  .section-welcome .normal-text {
+    padding-bottom: unset;
+  }
+
+  .section-synopsis {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: unset;
+    justify-content: space-evenly;
+  }
+
+  .section-synopsis > div {
+    padding: 5vh;
+  }
+
+  .section-synopsis .marco {
+    order: 2;
+    padding: unset;
+  }
+
+  .section-synopsis .gio {
+    order: 1;
+  }
+
+  .section-setting {
+    flex-direction: column;
+    gap: 0px;
+  }
+  
+  .section-setting > div {
+    padding: 5vh;
+  }
 }
