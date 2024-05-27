@@ -135,48 +135,83 @@ input[type="submit"]:hover, input[type="button"]:hover {
   height: 10vh;
 }
 
+.sideburn {
+  background-image: url("./media/flower_pattern_big2.svg");
+  background-size: 32rem;
+  
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+.sideburn-right {
+  background-image: url("./media/flower_pattern_big2_right.svg");
+  background-position: 0% 1.5%;
+}
+
+.sideburn-left {
+  background-position: 100% 1.5%;
+}
+
 .logo-title {
   height: 6vh;
   padding-bottom: 4vh;
 }
 
-.newsletter {
+.section-welcome {
+  height: 100vh;
   display: flex;
+  align-items: center;
+  gap: 16vh;
+}
+
+.section-welcome .rounded-corners {
+  height: 85vh;
+}
+
+.section-welcome .normal-text {
+  padding-bottom: 15vh;
+  width: 38vh;
+}
+
+.section-synopsis {
+  display: flex;
+  align-items: center;
   justify-content: center;
-
-  padding-bottom: 12vh;
+  padding-left: 12vh;
+  padding-right: 12vh;
+  gap: 10vh;
 }
 
-.newsletter > form {
-  box-sizing: border-box;
-  border: 0.4vh solid black;
-  border-radius: 5vh;
+.section-synopsis .gio {
+  height: 58vh;
+  align-self: flex-end;
+  padding-bottom: 2vh;
+}
 
-  height: 4.5vh;
-  width: 80vh;
+.section-synopsis .marco {
+  height: 80vh;
+  align-self: flex-end;
+  padding-left: 7vh;
+}
 
-  margin: 0vh;
+.section-synopsis > div {
+  padding-bottom: 20vh;
+}
+
+.section-setting {
   display: flex;
+  align-items: center;
+  padding-left: 20vh;
+  padding-right: 20vh;
+  gap: 10vh;
 }
 
-.newsletter > form > input[type="text"] {
-  border: none;
-  background: transparent;
-  flex-grow: 1;
-  padding-left: 1.5vh;
+.section-setting > img {
+  height: 70vh;
 }
 
-.newsletter > form > input[type="text"]:focus {
-  outline: none;
-}
-
-.newsletter > form > input[type="submit"] {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  height: unset;
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
+.section-setting > div {
+  padding-bottom: 20vh;
 }
 
 .section-characters {
@@ -257,6 +292,15 @@ input[type="submit"]:hover, input[type="button"]:hover {
   left: 2vh;
 }
 
+.section-living-room > div {
+  background-color: black;
+}
+
+.section-living-room > div > img {
+  padding: 2vh;
+  height: 80vh;
+}
+
 .section-contacts {
   padding-top: 8vh;
 }
@@ -277,89 +321,44 @@ input[type="submit"]:hover, input[type="button"]:hover {
   padding-bottom: 3vh;
 }
 
-.section-living-room > div {
-  background-color: black;
-}
-
-.section-living-room > div > img {
-  padding: 2vh;
-  height: 80vh;
-}
-
-.section-setting {
+.newsletter {
   display: flex;
-  align-items: center;
-  padding-left: 20vh;
-  padding-right: 20vh;
-  gap: 10vh;
-}
-
-.section-setting > img {
-  height: 70vh;
-}
-
-.section-setting > div {
-  padding-bottom: 20vh;
-}
-
-.section-synopsis {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  padding-left: 12vh;
-  padding-right: 12vh;
-  gap: 10vh;
+
+  padding-bottom: 12vh;
 }
 
-.section-synopsis .gio {
-  height: 58vh;
-  align-self: flex-end;
-  padding-bottom: 2vh;
-}
+.newsletter > form {
+  box-sizing: border-box;
+  border: 0.4vh solid black;
+  border-radius: 5vh;
 
-.section-synopsis .marco {
-  height: 80vh;
-  align-self: flex-end;
-  padding-left: 7vh;
-}
+  height: 4.5vh;
+  width: 80vh;
 
-.section-synopsis > div {
-  padding-bottom: 20vh;
-}
-
-.section-welcome {
-  height: 100vh;
+  margin: 0vh;
   display: flex;
-  align-items: center;
-  gap: 16vh;
 }
 
-.section-welcome .rounded-corners {
-  height: 85vh;
-}
-
-.section-welcome .normal-text {
-  padding-bottom: 15vh;
-  width: 38vh;
-}
-
-.sideburn {
-  background-image: url("./media/flower_pattern_big2.svg");
-  background-size: 32rem;
-  
+.newsletter > form > input[type="text"] {
+  border: none;
+  background: transparent;
   flex-grow: 1;
-  align-self: stretch;
+  padding-left: 1.5vh;
 }
 
-.sideburn-right {
-  background-image: url("./media/flower_pattern_big2_right.svg");
-  background-position: 0% 1.5%;
+.newsletter > form > input[type="text"]:focus {
+  outline: none;
 }
 
-.sideburn-left {
-  background-position: 100% 1.5%;
+.newsletter > form > input[type="submit"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: unset;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
 }
-
 
 .section-team {
   padding-top: 10vh;
@@ -421,7 +420,9 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
   .content-box {
     padding-top: 5vh;
-    width: 100%;
+    width: 100vw;
+    box-shadow: unset;
+    overflow-x: hidden;
   }
 
   .content-box > .gap {
@@ -444,6 +445,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .section-synopsis {
+    padding-top: 3vh;
     width: 100%;
     flex-wrap: wrap;
     gap: unset;
@@ -464,11 +466,105 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .section-setting {
+    padding: unset;
+    padding-top: 3vh;
     flex-direction: column;
     gap: 0px;
   }
   
   .section-setting > div {
     padding: 5vh;
+  }
+
+  .section-characters {
+    padding-top: 7vh;
+    width: 100vw;
+  }
+
+  .section-characters > .single-character {
+    height: unset;
+    width: 100vw;
+    position: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-characters > .single-character > img {
+    position: unset;
+    max-width: 700px;
+    width: 90vw;
+    height: unset;
+    padding: 5vh;
+    align-self: center;
+  }
+
+  .section-characters > .single-character > div {
+    position: unset;
+    width: unset;
+    padding: 5vh;
+  }
+
+  .section-characters .gio-sitting {
+    visibility: collapse;
+  }
+  .section-characters .gio-crossarms {
+    visibility: collapse;
+  }
+  .section-characters .gio-couch {
+    visibility: collapse;
+  }
+
+  .section-characters .marco-sitting {
+    visibility: collapse;
+  }
+  .section-characters .marco-standing-back {
+    visibility: collapse;
+  }
+  .section-characters .marco-standing-front {
+    visibility: collapse;
+  }
+  .section-characters .marco-sweating {
+    visibility: collapse;
+  }
+  
+  .section-living-room > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-living-room > div > img {
+    padding: unset;
+    height: unset;
+    width: 120vw;
+    object-fit: cover;
+  }
+
+  .section-contacts {
+    padding-top: 12vh;
+  }
+
+  .section-contacts br {
+    display: none;
+  }
+
+  .section-contacts > .normal-text {
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+
+  .newsletter > form {
+    width: 80vw;
+  }
+
+  .section-team {
+    padding-top: 15vh;
+    gap: 2vh;
+  }
+
+  .team-member {
+    flex-direction: column;
+    width: unset;
+    padding: 5vh;
+    gap: 5vh;
   }
 }
