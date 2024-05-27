@@ -32,7 +32,7 @@ body {
 
 /* General classes */
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   font-family: "Fredoka", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -340,14 +340,14 @@ input[type="submit"]:hover, input[type="button"]:hover {
   display: flex;
 }
 
-.newsletter > form > input[type="text"] {
+.newsletter > form > input[type="text"], input[type="email"] {
   border: none;
   background: transparent;
   flex-grow: 1;
   padding-left: 1.5vh;
 }
 
-.newsletter > form > input[type="text"]:focus {
+.newsletter > form > input[type="text"]:focus, input[type="email"]:focus {
   outline: none;
 }
 
@@ -410,7 +410,52 @@ input[type="submit"]:hover, input[type="button"]:hover {
   padding-bottom: 0.5vh;
 }
 
+@media (max-aspect-ratio: 7/4) {
+  .sideburn {
+    background-image: unset;
+  }
+
+  .content-box {
+    box-shadow: unset;
+    width: 100vw;
+  }
+}
+
 @media (max-aspect-ratio: 3/2) {
+
+  body {
+    font-size: 24px;
+  }
+
+  .title {
+    /* font-size: 7.8vw; */
+    font-size: 7.8vw;
+  }
+
+  .title-small {
+    font-size: 5.8vw;
+  }
+
+  .subtitle {
+    font-size: 5.8vw;
+  }
+
+  .subtitle-bold {
+    font-size: 5.8vw;
+  }
+
+  .small-subtitle {
+    font-size: 4vw;
+  }
+
+  .normal-text-bold {
+    font-size: 4.5vw;
+  }
+
+  .normal-text {
+    font-size: 4.5vw;
+    /* font-size: 2rem; */
+  }
 
   .rounded-corners {
     border-radius: unset;
@@ -493,8 +538,6 @@ input[type="submit"]:hover, input[type="button"]:hover {
     position: unset;
     max-width: 700px;
     width: 90vw;
-    height: unset;
-    padding: 5vh;
     align-self: center;
   }
 
@@ -504,29 +547,46 @@ input[type="submit"]:hover, input[type="button"]:hover {
     padding: 5vh;
   }
 
+  .section-characters .gio-crosslegged {
+    height: unset;
+  }
   .section-characters .gio-sitting {
     visibility: collapse;
+    height: 0vh;
   }
   .section-characters .gio-crossarms {
     visibility: collapse;
+    height: 0vh;
   }
   .section-characters .gio-couch {
     visibility: collapse;
+    height: 0vh;
   }
 
+  .section-characters .marco-reading-map {
+    height: unset;
+  }
   .section-characters .marco-sitting {
     visibility: collapse;
+    height: 0vh;
   }
   .section-characters .marco-standing-back {
     visibility: collapse;
+    height: 0vh;
   }
   .section-characters .marco-standing-front {
     visibility: collapse;
+    height: 0vh;
   }
   .section-characters .marco-sweating {
     visibility: collapse;
+    height: 0vh;
   }
   
+  .section-living-room {
+    padding-top: 7vh;
+  }
+
   .section-living-room > div {
     display: flex;
     justify-content: center;
@@ -558,6 +618,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
   .section-team {
     padding-top: 15vh;
+    padding-bottom: 15vh;
     gap: 2vh;
   }
 
