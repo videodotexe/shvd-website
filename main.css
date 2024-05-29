@@ -1,18 +1,578 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..500&display=swap');
+@font-face {
+  font-family: "Chopper";
+  src:
+    local("Chopper"),
+    url("./media/fonts/Chopper.woff2") format("woff2"),
+    url("./media/fonts/Chopper.woff") format("woff");
+}
+
+
+
+:root {
+  --aspect-ratio: calc(3/2)
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
+  font-size: 16px;
 
-    margin: 0px;
-    border: 0px;
-    padding: 0px;
+  width: 100%;
+
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
 }
 
 body {
+  display: flex;
+
+  align-items: flex-start;
+}
+
+/* General classes */
+
+input[type="button"] {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: x-large;
+
+  border-radius: 5vh;
+  border: solid black 0.15em;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  cursor: pointer;
+
+  transition: color 100ms, background-color 100ms;
+}
+
+input[type="button"]:hover {
+  box-sizing: border-box;
+  background-color: white;
+  color: black;
+}
+
+.rounded-corners {
+  border-radius: 3vh;
+}
+
+.title {
+  font-family: "Chopper", serif;
+  font-size: xx-large;
+  padding-bottom: unset;
+}
+
+.title > span {
+  font-size: larger;
+}
+
+.title-small {
+  font-family: "Chopper", serif;
+  font-size: xx-large;
+  padding-bottom: 1em;
+}
+
+.subtitle {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+  padding-bottom: 0.7em;
+}
+
+.subtitle-bold {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: xx-large;
+  padding-bottom: 0.7em;
+}
+
+.small-subtitle {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: large;
+}
+
+.normal-text {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: x-large;
+}
+
+.normal-text-bold {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: x-large;
+}
+
+
+/* Specific classes  */
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: calc(100vh*var(--aspect-ratio));
+  background: white;
+  box-shadow: 0vh 0vh 2vh rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.content-box > .gap {
+  height: 7em;
+}
+
+.sideburn {
+  background-image: url("./media/flower_pattern_big2.svg");
+  background-size: 32rem;
+  
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+.sideburn-right {
+  background-image: url("./media/flower_pattern_big2_right.svg");
+  background-position: 0% 1.5%;
+}
+
+.sideburn-left {
+  background-position: 100% 1.5%;
+}
+
+.logo-title {
+  height: 3em;
+  padding-bottom: 2em;
+}
+
+.section-welcome {
+  padding-top: 7em;
+  height: calc(100vh - 14em);
+  display: flex;
+  align-items: center;
+  gap: 16vh;
+}
+
+.section-welcome .rounded-corners {
+  height: 85vh;
+}
+
+.section-welcome .normal-text {
+  padding-bottom: 15vh;
+  width: 38vh;
+}
+
+.section-synopsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12vh;
+  padding-right: 12vh;
+  gap: 10vh;
+}
+
+.section-synopsis .gio {
+  height: 58vh;
+  align-self: flex-end;
+  padding-bottom: 2vh;
+}
+
+.section-synopsis .marco {
+  height: 80vh;
+  align-self: flex-end;
+  padding-left: 7vh;
+}
+
+.section-synopsis > div {
+  padding-bottom: 20vh;
+}
+
+.section-setting {
+  display: flex;
+  align-items: center;
+  padding-left: 20vh;
+  padding-right: 20vh;
+  gap: 10vh;
+}
+
+.section-setting > img {
+  height: 70vh;
+}
+
+.section-setting > div {
+  padding-bottom: 20vh;
+}
+
+.section-characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-characters > .single-character {
+  height: 90vh;
+  width: calc(90vh*var(--aspect-ratio));
+  position: relative;
+}
+
+.section-characters > .single-character > img {
+  mix-blend-mode: multiply;
+  position: absolute;
+}
+
+.section-characters > .gio > div {
+  width: 40vh;
+  top: 9vh;
+  left: 48vh;
+  position: absolute;
+}
+
+.section-characters .gio-sitting {
+  height: 44vh;
+  top: 7vh;
+  left: 8vh;
+}
+.section-characters .gio-couch {
+  height: 39vh;
+  bottom: 2vh;
+  right: 6vh;
+}
+.section-characters .gio-crossarms {
+  height: 27vh;
+  bottom: 8vh;
+  left: 22vh;
+}
+.section-characters .gio-crosslegged {
+  height: 39vh;
+  top: 5vh;
+  right: 8vh;
+}
+
+.section-characters > .marco > div {
+  width: 35vh;
+  top: 5vh;
+  left: 46vh;
+  position: absolute;
+}
+
+.section-characters .marco-reading-map {
+  height: 45vh;
+  top: 43vh;
+  left: 60vh;
+}
+.section-characters .marco-sitting {
+  height: 34vh;
+  top: 52vh;
+  left: 13vh;
+}
+.section-characters .marco-standing-back {
+  height: 63vh;
+  top: 21vh;
+  left: 83vh;
+}
+.section-characters .marco-standing-front {
+  height: 63vh;
+  top: 5vh;
+  left: 109vh;
+}
+.section-characters .marco-sweating {
+  height: 37vh;
+  top: 11vh;
+  left: 2vh;
+}
+
+.section-living-room > div {
+  background-color: black;
+}
+
+.section-living-room > div > img {
+  padding: 2vh;
+  height: 80vh;
+}
+
+.section-contacts {
+  padding-top: 8vh;
+}
+
+.section-contacts > div {
+  text-align: center;
+}
+
+.section-contacts > .subtitle-bold {
+  padding-bottom: .4em;
+}
+
+.section-contacts > .normal-text-bold {
+  padding-bottom: 1.5em;
+}
+
+.section-contacts > .normal-text {
+  padding-bottom: 1em;
+}
+
+.newsletter {
+  padding-bottom: 9em;
+}
+
+.section-team {
+  padding-top: 4em;
+  padding-bottom: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8vh;
+}
+
+.team-member {
+  width: 90vh;
+  display: flex;
+  align-items: center;
+  gap: 10vh;
+}
+
+.team-member .subtitle-bold {
+  padding-bottom: 0vh;
+}
+
+.team-member > img {
+  height: 14em;
+  border-radius: 100vh;
+}
+
+.team-member .socials {
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.team-member .socials img {
+  outline: 0.3vh solid black;
+  outline-offset: -0.1vh;
+  border-radius: 10vh;
+  width: 3.5vh;
+
+  transition: outline-color 100ms, filter 100ms;
+}
+
+.team-member .socials img:hover {
+  outline-color: white;
+  filter: invert(1);
+}
+
+.team-member .normal-text-bold {
+  padding-bottom: 0.5em;
+}
+
+@media (max-aspect-ratio: 7/4) {
+  .sideburn {
+    background-image: unset;
+  }
+
+  .content-box {
+    box-shadow: unset;
+    width: 100vw;
+  }
+}
+
+@media (max-aspect-ratio: 11/8) {
+
+  .rounded-corners {
+    border-radius: unset;
+    width: 100vw;
+    object-fit: cover;
+    height: unset;
+  }
+
+  .content-box {
+    padding-top: 3em;
+    width: 100vw;
+    box-shadow: unset;
+    overflow-x: hidden;
+  }
+
+  .content-box > .gap {
+    height: 3em;
+  }
+
+  .sideburn {
+    visibility: collapse;
+  }
+
+  .section-welcome {
+    gap: 3em;
+    width: 100%;
+    height: unset;
+    flex-direction: column-reverse;
+    padding-top: unset;
+  }
+
+  .section-welcome > .rounded-corners {
+    height: unset;
+  }
+
+  .section-welcome > div {
+    width: 80%;
+  }
+
+  .section-welcome .normal-text {
+    padding-bottom: unset;
+    width: unset;
+  }
+
+  .section-synopsis {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: unset;
+    justify-content: space-evenly;
+  }
+
+  .section-synopsis > div {
+    padding: 3em;
+  }
+
+  .section-synopsis .marco {
+    order: 2;
+    padding: unset;
+    height: unset;
+    width: 41vw;
+  }
+
+  .section-synopsis .gio {
+    order: 1;
+    width: 40vw;
+    height: unset;
+    padding-bottom: 4vw;
+  }
+
+  .section-setting {
+    padding: unset;
+    flex-direction: column;
+    gap: 0px;
+  }
+  
+  .section-setting > img {
+    height: unset;
+  }
+
+  .section-setting > div {
+    padding: 3em;
+  }
+
+  .section-characters {
+    width: 100vw;
+  }
+
+  .section-characters > .single-character {
+    height: unset;
+    width: 100vw;
+    position: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-characters > .single-character > img {
+    position: unset;
+    max-width: 700px;
+    width: 90vw;
+    align-self: center;
+  }
+
+  .section-characters > .single-character > div {
+    position: unset;
+    width: unset;
+    padding: 3em;
+  }
+
+  .section-characters .gio-crosslegged {
+    height: unset;
+  }
+  .section-characters .gio-sitting {
+    visibility: collapse;
+    height: 0vh;
+  }
+  .section-characters .gio-crossarms {
+    visibility: collapse;
+    height: 0vh;
+  }
+  .section-characters .gio-couch {
+    visibility: collapse;
+    height: 0vh;
+  }
+
+  .section-characters .marco-reading-map {
+    height: unset;
+  }
+  .section-characters .marco-sitting {
+    visibility: collapse;
+    height: 0vh;
+  }
+  .section-characters .marco-standing-back {
+    visibility: collapse;
+    height: 0vh;
+  }
+  .section-characters .marco-standing-front {
+    visibility: collapse;
+    height: 0vh;
+  }
+  .section-characters .marco-sweating {
+    visibility: collapse;
+    height: 0vh;
+  }
+  
+  .section-living-room {
+  }
+
+  .section-living-room > div {
     display: flex;
     justify-content: center;
-    align-items: center;
+  }
+
+  .section-living-room > div > img {
+    padding: unset;
+    height: unset;
+    width: 120vw;
+    object-fit: cover;
+  }
+
+  .section-contacts {
+  padding-top: 3em;
+  }
+
+  .section-contacts br {
+    display: none;
+  }
+
+  .section-contacts > .normal-text {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .newsletter > form {
+    width: 80%;
+  }
+
+  .section-team {
+    padding-bottom: 12em;
+    gap: 1em;
+  }
+
+  .team-member {
+    flex-direction: column;
+    width: 70%;
+    padding: 5vh;
+    gap: 5vh;
+  }
+
+  .team-member .socials img {
+    width: 2.15em;
+  }
 }
