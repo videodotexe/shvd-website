@@ -36,17 +36,17 @@ input[type="text"], input[type="email"] {
   font-family: "Fredoka", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 2.3vh;
+  font-size: x-large;
 }
 
 input[type="submit"], input[type="button"] {
   font-family: "Fredoka", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2.3vh;
+  font-size: x-large;
 
   border-radius: 5vh;
-  border: solid black 0.4vh;
+  border: solid black 0.15em;
   box-sizing: border-box;
   background-color: black;
   color: white;
@@ -70,13 +70,17 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
 .title {
   font-family: "Chopper", serif;
-  font-size: 4vh;
+  font-size: xx-large;
   padding-bottom: 1.5vh;
+}
+
+.title > span {
+  font-size: larger;
 }
 
 .title-small {
   font-family: "Chopper", serif;
-  font-size: 3vh;
+  font-size: xx-large;
   padding-bottom: 1.5vh;
 }
 
@@ -84,7 +88,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   font-family: "Philosopher", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 3vh;
+  font-size: xx-large;
   padding-bottom: 2vh;
 }
 
@@ -92,7 +96,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   font-family: "Philosopher", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 3vh;
+  font-size: xx-large;
   padding-bottom: 2vh;
 }
 
@@ -100,21 +104,21 @@ input[type="submit"]:hover, input[type="button"]:hover {
   font-family: "Philosopher", sans-serif;
   font-weight: 300;
   font-style: italic;
-  font-size: 2.0vh;
+  font-size: large;
 }
 
 .normal-text {
   font-family: "Fredoka", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 2.3vh;
+  font-size: x-large;
 }
 
 .normal-text-bold {
   font-family: "Fredoka", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2.3vh;
+  font-size: x-large;
 }
 
 
@@ -421,41 +425,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 }
 
-@media (max-aspect-ratio: 3/2) {
-
-  body {
-    font-size: 24px;
-  }
-
-  .title {
-    /* font-size: 7.8vw; */
-    font-size: 7.8vw;
-  }
-
-  .title-small {
-    font-size: 5.8vw;
-  }
-
-  .subtitle {
-    font-size: 5.8vw;
-  }
-
-  .subtitle-bold {
-    font-size: 5.8vw;
-  }
-
-  .small-subtitle {
-    font-size: 4vw;
-  }
-
-  .normal-text-bold {
-    font-size: 4.5vw;
-  }
-
-  .normal-text {
-    font-size: 4.5vw;
-    /* font-size: 2rem; */
-  }
+@media (max-aspect-ratio: 11/8) {
 
   .rounded-corners {
     border-radius: unset;
@@ -483,6 +453,10 @@ input[type="submit"]:hover, input[type="button"]:hover {
     width: 100%;
     height: unset;
     flex-direction: column-reverse;
+  }
+
+  .section-welcome > div {
+    width: 80%;
   }
 
   .section-welcome .normal-text {
@@ -613,7 +587,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .newsletter > form {
-    width: 80vw;
+    width: 80%;
   }
 
   .section-team {
@@ -624,8 +598,12 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
   .team-member {
     flex-direction: column;
-    width: unset;
+    width: 70%;
     padding: 5vh;
     gap: 5vh;
+  }
+
+  .team-member .socials img {
+    width: 2.15em;
   }
 }
