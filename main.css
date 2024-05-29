@@ -32,14 +32,7 @@ body {
 
 /* General classes */
 
-input[type="text"], input[type="email"] {
-  font-family: "Fredoka", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: x-large;
-}
-
-input[type="submit"], input[type="button"] {
+input[type="button"] {
   font-family: "Fredoka", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -50,15 +43,14 @@ input[type="submit"], input[type="button"] {
   box-sizing: border-box;
   background-color: black;
   color: white;
-  padding-left: 2vh;
-  padding-right: 2vh;
-  height: 4.5vh;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
   cursor: pointer;
 
   transition: color 100ms, background-color 100ms;
 }
 
-input[type="submit"]:hover, input[type="button"]:hover {
+input[type="button"]:hover {
   box-sizing: border-box;
   background-color: white;
   color: black;
@@ -71,7 +63,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
 .title {
   font-family: "Chopper", serif;
   font-size: xx-large;
-  padding-bottom: 1.5vh;
+  padding-bottom: unset;
 }
 
 .title > span {
@@ -81,7 +73,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
 .title-small {
   font-family: "Chopper", serif;
   font-size: xx-large;
-  padding-bottom: 1.5vh;
+  padding-bottom: 1em;
 }
 
 .subtitle {
@@ -89,7 +81,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   font-weight: 400;
   font-style: normal;
   font-size: xx-large;
-  padding-bottom: 2vh;
+  padding-bottom: 0.7em;
 }
 
 .subtitle-bold {
@@ -97,7 +89,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   font-weight: 700;
   font-style: normal;
   font-size: xx-large;
-  padding-bottom: 2vh;
+  padding-bottom: 0.7em;
 }
 
 .small-subtitle {
@@ -136,7 +128,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 .content-box > .gap {
-  height: 10vh;
+  height: 7em;
 }
 
 .sideburn {
@@ -157,12 +149,13 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 .logo-title {
-  height: 6vh;
-  padding-bottom: 4vh;
+  height: 3em;
+  padding-bottom: 2em;
 }
 
 .section-welcome {
-  height: 100vh;
+  padding-top: 7em;
+  height: calc(100vh - 14em);
   display: flex;
   align-items: center;
   gap: 16vh;
@@ -237,7 +230,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
 .section-characters > .gio > div {
   width: 40vh;
-  top: 16vh;
+  top: 9vh;
   left: 48vh;
   position: absolute;
 }
@@ -264,9 +257,9 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 .section-characters > .marco > div {
-  width: 40vh;
-  top: 11vh;
-  left: 41vh;
+  width: 35vh;
+  top: 5vh;
+  left: 46vh;
   position: absolute;
 }
 
@@ -314,58 +307,23 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 .section-contacts > .subtitle-bold {
-  padding-bottom: 0.5vh;
+  padding-bottom: .4em;
 }
 
 .section-contacts > .normal-text-bold {
-  padding-bottom: 3vh;
+  padding-bottom: 1.5em;
 }
 
 .section-contacts > .normal-text {
-  padding-bottom: 3vh;
+  padding-bottom: 1em;
 }
 
 .newsletter {
-  display: flex;
-  justify-content: center;
-
-  padding-bottom: 12vh;
-}
-
-.newsletter > form {
-  box-sizing: border-box;
-  border: 0.4vh solid black;
-  border-radius: 5vh;
-
-  height: 4.5vh;
-  width: 80vh;
-
-  margin: 0vh;
-  display: flex;
-}
-
-.newsletter > form > input[type="text"], input[type="email"] {
-  border: none;
-  background: transparent;
-  flex-grow: 1;
-  padding-left: 1.5vh;
-}
-
-.newsletter > form > input[type="text"]:focus, input[type="email"]:focus {
-  outline: none;
-}
-
-.newsletter > form > input[type="submit"] {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  height: unset;
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
+  padding-bottom: 9em;
 }
 
 .section-team {
-  padding-top: 10vh;
+  padding-top: 4em;
   padding-bottom: 20vh;
   display: flex;
   flex-direction: column;
@@ -385,15 +343,15 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 .team-member > img {
-  height: 25vh;
+  height: 14em;
   border-radius: 100vh;
 }
 
 .team-member .socials {
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
   display: flex;
-  gap: 0.9vh;
+  gap: 0.5em;
 }
 
 .team-member .socials img {
@@ -411,7 +369,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 .team-member .normal-text-bold {
-  padding-bottom: 0.5vh;
+  padding-bottom: 0.5em;
 }
 
 @media (max-aspect-ratio: 7/4) {
@@ -431,17 +389,18 @@ input[type="submit"]:hover, input[type="button"]:hover {
     border-radius: unset;
     width: 100vw;
     object-fit: cover;
+    height: unset;
   }
 
   .content-box {
-    padding-top: 5vh;
+    padding-top: 3em;
     width: 100vw;
     box-shadow: unset;
     overflow-x: hidden;
   }
 
   .content-box > .gap {
-    height: unset;
+    height: 3em;
   }
 
   .sideburn {
@@ -449,10 +408,15 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .section-welcome {
-    gap: 5vh;
+    gap: 3em;
     width: 100%;
     height: unset;
     flex-direction: column-reverse;
+    padding-top: unset;
+  }
+
+  .section-welcome > .rounded-corners {
+    height: unset;
   }
 
   .section-welcome > div {
@@ -461,10 +425,10 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
   .section-welcome .normal-text {
     padding-bottom: unset;
+    width: unset;
   }
 
   .section-synopsis {
-    padding-top: 3vh;
     width: 100%;
     flex-wrap: wrap;
     gap: unset;
@@ -472,31 +436,38 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .section-synopsis > div {
-    padding: 5vh;
+    padding: 3em;
   }
 
   .section-synopsis .marco {
     order: 2;
     padding: unset;
+    height: unset;
+    width: 41vw;
   }
 
   .section-synopsis .gio {
     order: 1;
+    width: 40vw;
+    height: unset;
+    padding-bottom: 4vw;
   }
 
   .section-setting {
     padding: unset;
-    padding-top: 3vh;
     flex-direction: column;
     gap: 0px;
   }
   
+  .section-setting > img {
+    height: unset;
+  }
+
   .section-setting > div {
-    padding: 5vh;
+    padding: 3em;
   }
 
   .section-characters {
-    padding-top: 7vh;
     width: 100vw;
   }
 
@@ -518,7 +489,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   .section-characters > .single-character > div {
     position: unset;
     width: unset;
-    padding: 5vh;
+    padding: 3em;
   }
 
   .section-characters .gio-crosslegged {
@@ -558,7 +529,6 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
   
   .section-living-room {
-    padding-top: 7vh;
   }
 
   .section-living-room > div {
@@ -574,7 +544,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .section-contacts {
-    padding-top: 12vh;
+  padding-top: 3em;
   }
 
   .section-contacts br {
@@ -582,8 +552,8 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .section-contacts > .normal-text {
-    padding-left: 5vh;
-    padding-right: 5vh;
+    padding-left: 2em;
+    padding-right: 2em;
   }
 
   .newsletter > form {
@@ -591,9 +561,8 @@ input[type="submit"]:hover, input[type="button"]:hover {
   }
 
   .section-team {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-    gap: 2vh;
+    padding-bottom: 12em;
+    gap: 1em;
   }
 
   .team-member {
