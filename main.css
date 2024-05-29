@@ -531,10 +531,6 @@ input[type="button"]:hover {
     visibility: collapse;
     height: 0vh;
   }
-
-  .section-characters .subtitle-bold {
-    text-align: center;
-  }
   
   .section-living-room > div {
     display: flex;
