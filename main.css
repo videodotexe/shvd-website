@@ -385,6 +385,10 @@ input[type="button"]:hover {
 
 @media (max-aspect-ratio: 11/8) {
 
+  .title-small {
+    text-align: center;
+  }
+
   .rounded-corners {
     border-radius: unset;
     width: 100vw;
@@ -527,10 +531,11 @@ input[type="button"]:hover {
     visibility: collapse;
     height: 0vh;
   }
-  
-  .section-living-room {
-  }
 
+  .section-characters .subtitle-bold {
+    text-align: center;
+  }
+  
   .section-living-room > div {
     display: flex;
     justify-content: center;
