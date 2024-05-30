@@ -24,9 +24,9 @@ html, body {
   padding: 0px;
 }
 
-body {
+.scrollable-body {
+  width: 100%;
   display: flex;
-
   align-items: flex-start;
 }
 
