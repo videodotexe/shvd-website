@@ -82,7 +82,7 @@
           <div class="normal-text-bold">Would you like to be kept updated?</div>
           <div class="normal-text">We are working hard to bring Grattachecca to the screen, <br />subscribe to the newsletter to stay in the loop.</div>
           <div class="newsletter">
-            <input class="normal-text-bold" type="button" value="Subscribe..." />
+            <input type="button" value="Subscribe..." onclick="showNewsletterForm()" />
           </div>
           <div class="normal-text-bold">Alternatively, get in touch!</div>
           <div class="normal-text">Do you have any questions, proposals, or comments? <br />Our inbox is always open.</div>
@@ -190,5 +190,48 @@
       </div>
       <div class="sideburn sideburn-right"></div>
     </div>
+
+    <script>
+      function showNewsletterForm() {
+        const newsletterForm = document.createElement("div");
+        newsletterForm.className = "popup";
+        newsletterForm.id = "newsletter-form"
+        newsletterForm.innerHTML = `
+          <div class="newsletter-form">
+            <div class="dismiss" onclick="dismissPopup('newsletter-form')">
+              &Cross;
+            </div>
+            <div class="subtitle-bold">Newsletter subscription</div>
+            <form>
+              <input type="email" placeholder="Email" />
+              <input type="submit" value="Subscribe" />
+            </form>
+            <div class="terms">
+              By clicking subscribe you accept this, that and this other thing according to our privacy policy.
+              You will be able to unsubscribe at any time.
+            </div>
+          </div>
+        `;
+        document.body.appendChild(newsletterForm);
+
+        setScrolling(false);
+      }
+
+      function dismissPopup(popupId) {
+        const popup = document.getElementById(popupId);
+        popup.remove();
+        
+        setScrolling(true);
+      }
+
+      function setScrolling(scrolling) {
+        if(scrolling) {
+          document.body.style.position = "relative";
+          
+        } else {
+          document.body.style.position = "fixed";
+        }
+      }
+    </script>
   </body>
 </html>
