@@ -149,7 +149,7 @@ input[type="button"]:hover {
 }
 
 .logo-title {
-  height: 4em;
+  height: 5em;
   padding-bottom: 2em;
 }
 
@@ -386,7 +386,7 @@ input[type="button"]:hover {
 @media (max-aspect-ratio: 11/8) {
 
   .logo-title {
-    height: 3em;
+    height: 4em;
   }
 
   .title-small {
@@ -401,7 +401,6 @@ input[type="button"]:hover {
   }
 
   .content-box {
-    padding-top: 3em;
     width: 100vw;
     box-shadow: unset;
     overflow-x: hidden;
@@ -416,11 +415,11 @@ input[type="button"]:hover {
   }
 
   .section-welcome {
-    gap: 3em;
     width: 100%;
     height: unset;
     flex-direction: column-reverse;
     padding-top: unset;
+    gap: unset;
   }
 
   .section-welcome > .rounded-corners {
@@ -428,7 +427,7 @@ input[type="button"]:hover {
   }
 
   .section-welcome > div {
-    width: 80%;
+    padding: 3em;
   }
 
   .section-welcome .normal-text {
@@ -549,16 +548,11 @@ input[type="button"]:hover {
   }
 
   .section-contacts {
-  padding-top: 3em;
+  padding: 3em;
   }
 
   .section-contacts br {
     display: none;
-  }
-
-  .section-contacts > .normal-text {
-    padding-left: 2em;
-    padding-right: 2em;
   }
 
   .newsletter > form {
