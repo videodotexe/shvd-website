@@ -15,8 +15,6 @@
 }
 
 html, body {
-  font-size: 16px;
-
   width: 100%;
 
   margin: 0px;
@@ -25,39 +23,52 @@ html, body {
 }
 
 body {
-  display: flex;
 
+  font-family: "Fredoka", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: x-large;
+
+}
+
+.scrollable-body {
+  width: 100%;
+  display: flex;
   align-items: flex-start;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
 /* General classes */
 
-input[type="button"] {
+input {
   font-family: "Fredoka", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-size: x-large;
 
   border-radius: 5vh;
-  border: solid black 0.15em;
+  border: solid black 0.07em;
   box-sizing: border-box;
+
+  padding: 0.2em 0.8em;
+}
+
+input[type="button"], input[type="submit"] {
   background-color: black;
   color: white;
-  padding-left: 0.7em;
-  padding-right: 0.7em;
   cursor: pointer;
-
   transition: color 100ms, background-color 100ms;
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover, input[type="submit"]:hover {
   box-sizing: border-box;
   background-color: white;
   color: black;
 }
 
 .rounded-corners {
-  border-radius: 3vh;
+  border-radius: 1.5em;
 }
 
 .title {
@@ -99,20 +110,78 @@ input[type="button"]:hover {
   font-size: large;
 }
 
-.normal-text {
-  font-family: "Fredoka", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: x-large;
-}
 
 .normal-text-bold {
-  font-family: "Fredoka", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  font-size: x-large;
 }
 
+
+.dialog {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0px;
+
+  background-color: rgba(0,0,0,0.3);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog > div {
+  border-radius: 1.5em;
+  background: white;
+  padding: 3em;
+  padding-top: 2.5em;
+  width: 70vw;
+  max-width: 30em;
+  position: relative;
+}
+
+.dialog .dismiss {
+  font-size: xx-large;
+  position: absolute;
+  top: 0em;
+  right: 0.5em;
+  cursor: pointer;
+  padding: 0.3em;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.dialog .subtitle-bold {
+  text-align: center;
+  padding-bottom: 0.6em;
+}
+
+.error-dialog > div {
+  outline: 0.5em solid #e34d4d;
+  outline-offset: -1em;
+}
+
+.error-dialog .dismiss {
+  top: 1em;
+  right: 1.5em;
+}
+
+#newsletter-form > div > form {
+  display: flex;
+  margin: 1em 0em;
+  gap: 0.6em;
+}
+
+#newsletter-form > div > form > input[type="email"] {
+  flex-grow: 1;
+} 
+
+#newsletter-form > div > .terms {
+  font-size: medium;
+  text-align: center;
+  color: grey;
+}
 
 /* Specific classes  */
 
@@ -121,10 +190,11 @@ input[type="button"]:hover {
   flex-direction: column;
   align-items: center;
 
-  width: calc(100vh*var(--aspect-ratio));
   background: white;
-  box-shadow: 0vh 0vh 2vh rgba(0,0,0,0.3);
+  box-shadow: 0vh 0vh 1em rgba(0,0,0,0.3);
   z-index: 1;
+  padding: 7em;
+  width: calc(80vw - 14em);
 }
 
 .content-box > .gap {
@@ -137,6 +207,7 @@ input[type="button"]:hover {
   
   flex-grow: 1;
   align-self: stretch;
+  /*! width: 12em; */
 }
 
 .sideburn-right {
@@ -149,58 +220,56 @@ input[type="button"]:hover {
 }
 
 .logo-title {
-  height: 5em;
+  width: 18em;
   padding-bottom: 2em;
+  display: flex;
+  justify-content: left;
+}
+
+.logo-title > img {
+  width: 100%;
 }
 
 .section-welcome {
-  padding-top: 7em;
   height: calc(100vh - 14em);
   display: flex;
   align-items: center;
-  gap: 16vh;
+  justify-content: space-between;
+  width: 100%;
+  gap: 5em;
 }
 
 .section-welcome .rounded-corners {
-  height: 85vh;
-}
-
-.section-welcome .normal-text {
-  padding-bottom: 15vh;
-  width: 38vh;
+  height: 80vh;
+  flex-grow: 1;
 }
 
 .section-synopsis {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 12vh;
-  padding-right: 12vh;
-  gap: 10vh;
+  gap: 4em;
 }
 
 .section-synopsis .gio {
-  height: 58vh;
+  height: 22em;
   align-self: flex-end;
-  padding-bottom: 2vh;
+  padding-bottom: 0.7em;
 }
 
 .section-synopsis .marco {
-  height: 80vh;
+  height: 31em;
   align-self: flex-end;
-  padding-left: 7vh;
 }
 
 .section-synopsis > div {
-  padding-bottom: 20vh;
+  padding-bottom: 8em;
 }
 
 .section-setting {
   display: flex;
   align-items: center;
-  padding-left: 20vh;
-  padding-right: 20vh;
-  gap: 10vh;
+  gap: 4em;
 }
 
 .section-setting > img {
@@ -208,85 +277,61 @@ input[type="button"]:hover {
 }
 
 .section-setting > div {
-  padding-bottom: 20vh;
+  padding-bottom: 8em;
 }
 
 .section-characters {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4em;
 }
 
-.section-characters > .single-character {
-  height: 90vh;
-  width: calc(90vh*var(--aspect-ratio));
-  position: relative;
+.section-characters .single-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
 
-.section-characters > .single-character > img {
-  mix-blend-mode: multiply;
-  position: absolute;
+.section-characters .single-character > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
 }
 
-.section-characters > .gio > div {
-  width: 40vh;
-  top: 9vh;
-  left: 48vh;
-  position: absolute;
+.section-characters .single-character > div > div {
+  width: 30%;
 }
 
-.section-characters .gio-sitting {
-  height: 44vh;
-  top: 7vh;
-  left: 8vh;
-}
-.section-characters .gio-couch {
-  height: 39vh;
-  bottom: 2vh;
-  right: 6vh;
-}
-.section-characters .gio-crossarms {
-  height: 27vh;
-  bottom: 8vh;
-  left: 22vh;
-}
-.section-characters .gio-crosslegged {
-  height: 39vh;
-  top: 5vh;
-  right: 8vh;
+.section-characters .single-character > div > img {
+  width: 30%;
 }
 
-.section-characters > .marco > div {
-  width: 35vh;
-  top: 5vh;
-  left: 46vh;
-  position: absolute;
+.section-characters .single-character > div > .gio-crosslegged {
+  width: 27%;
 }
 
-.section-characters .marco-reading-map {
-  height: 45vh;
-  top: 43vh;
-  left: 60vh;
+.section-characters .single-character > div > .gio-crossarms {
+  padding-bottom: 1em;
 }
-.section-characters .marco-sitting {
-  height: 34vh;
-  top: 52vh;
-  left: 13vh;
+
+.section-characters .single-character > div > .gio-couch {
+  width: 62%;
 }
-.section-characters .marco-standing-back {
-  height: 63vh;
-  top: 21vh;
-  left: 83vh;
+
+.section-characters .single-character > .marco-second-row > img {
+  width: 27%;
 }
-.section-characters .marco-standing-front {
-  height: 63vh;
-  top: 5vh;
-  left: 109vh;
+
+.section-characters .single-character > div > .marco-standing-front {
+  width: 23%;
 }
-.section-characters .marco-sweating {
-  height: 37vh;
-  top: 11vh;
-  left: 2vh;
+
+.section-living-room {
+  width: 75%;
 }
 
 .section-living-room > div {
@@ -294,12 +339,16 @@ input[type="button"]:hover {
 }
 
 .section-living-room > div > img {
-  padding: 2vh;
-  height: 80vh;
+  padding: 1em;
+  width: calc(100% - 2em);
 }
 
 .section-contacts {
-  padding-top: 8vh;
+  padding-top: 2em;
+}
+
+.section-contacts input {
+  margin-top: 1.5em;
 }
 
 .section-contacts > div {
@@ -323,19 +372,17 @@ input[type="button"]:hover {
 }
 
 .section-team {
-  padding-top: 4em;
-  padding-bottom: 20vh;
+  padding: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8vh;
+  gap: 3em;
 }
 
 .team-member {
-  width: 90vh;
   display: flex;
   align-items: center;
-  gap: 10vh;
+  gap: 3em;
 }
 
 .team-member .subtitle-bold {
@@ -343,7 +390,7 @@ input[type="button"]:hover {
 }
 
 .team-member > img {
-  height: 14em;
+  height: 10em;
   border-radius: 100vh;
 }
 
@@ -351,14 +398,14 @@ input[type="button"]:hover {
   padding-top: 1.2em;
   padding-bottom: 1.2em;
   display: flex;
-  gap: 0.5em;
+  gap: 0.3em;
 }
 
 .team-member .socials img {
-  outline: 0.3vh solid black;
-  outline-offset: -0.1vh;
+  outline: 0.07em solid black;
+  outline-offset: -0.03em;
   border-radius: 10vh;
-  width: 3.5vh;
+  width: 1.5em;
 
   transition: outline-color 100ms, filter 100ms;
 }
@@ -372,7 +419,7 @@ input[type="button"]:hover {
   padding-bottom: 0.5em;
 }
 
-@media (max-aspect-ratio: 7/4) {
+@media (max-aspect-ratio: 7/4) or (max-width: 1200px) {
   .sideburn {
     background-image: unset;
   }
@@ -383,10 +430,11 @@ input[type="button"]:hover {
   }
 }
 
-@media (max-aspect-ratio: 11/8) {
+@media (max-aspect-ratio: 11/8) or (max-width: 850px) {
 
   .logo-title {
-    height: 4em;
+    width: 80vw;
+    max-width: 20em;
   }
 
   .title-small {
@@ -403,7 +451,7 @@ input[type="button"]:hover {
   .content-box {
     width: 100vw;
     box-shadow: unset;
-    overflow-x: hidden;
+    padding: unset;
   }
 
   .content-box > .gap {
@@ -443,7 +491,7 @@ input[type="button"]:hover {
   }
 
   .section-synopsis > div {
-    padding: 3em;
+    padding: 2em;
   }
 
   .section-synopsis .marco {
@@ -471,7 +519,7 @@ input[type="button"]:hover {
   }
 
   .section-setting > div {
-    padding: 3em;
+    padding: 2em;
   }
 
   .section-characters {
@@ -487,21 +535,34 @@ input[type="button"]:hover {
   }
 
   .section-characters > .single-character > img {
-    position: unset;
     max-width: 700px;
-    width: 90vw;
     align-self: center;
+  }
+
+  .section-characters > .gio > .gio-crosslegged {
+    width: 90vw;
+  }
+
+  .section-characters > .marco > .marco-reading-map {
+    width: 90vw;
   }
 
   .section-characters > .single-character > div {
     position: unset;
     width: unset;
-    padding: 3em;
+    flex-direction: column;
+    gap: unset;
   }
 
-  .section-characters .gio-crosslegged {
-    height: unset;
+  .section-characters .single-character > div > div {
+    width: unset;
+    padding: 2em;
   }
+
+  .section-characters .single-character > div > .gio-crosslegged {
+    width: 90vw;
+  }
+
   .section-characters .gio-sitting {
     visibility: collapse;
     height: 0vh;
@@ -515,9 +576,10 @@ input[type="button"]:hover {
     height: 0vh;
   }
 
-  .section-characters .marco-reading-map {
-    height: unset;
+  .section-characters .single-character > div > .marco-reading-map {
+    width: 90vw;
   }
+
   .section-characters .marco-sitting {
     visibility: collapse;
     height: 0vh;
@@ -535,6 +597,10 @@ input[type="button"]:hover {
     height: 0vh;
   }
   
+  .section-living-room {
+    width: unset;
+  }
+
   .section-living-room > div {
     display: flex;
     justify-content: center;
@@ -560,18 +626,35 @@ input[type="button"]:hover {
   }
 
   .section-team {
-    padding-bottom: 12em;
-    gap: 1em;
+    gap: 4em;
+    padding: unset;
+    padding-bottom: 8em;
   }
 
   .team-member {
     flex-direction: column;
     width: 70%;
-    padding: 5vh;
-    gap: 5vh;
   }
 
   .team-member .socials img {
-    width: 2.15em;
+    width: 1.7em;
+  }
+
+  .dialog {
+    align-items: end;
+  }
+
+  .dialog > div {
+    width: 100vw;
+    max-width: unset;
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
+    min-width: 0em;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  #newsletter-form > div > form {
+    flex-direction: column;
   }
 }
