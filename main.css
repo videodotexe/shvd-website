@@ -167,6 +167,10 @@ input[type="button"]:hover, input[type="submit"]:hover {
   right: 1.5em;
 }
 
+.error-dialog span {
+  font-size: smaller;
+}
+
 #newsletter-form > div > form {
   display: flex;
   margin: 1em 0em;
@@ -524,6 +528,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 
   .section-characters {
     width: 100vw;
+    gap: unset;
   }
 
   .section-characters > .single-character {
@@ -652,6 +657,12 @@ input[type="button"]:hover, input[type="submit"]:hover {
     min-width: 0em;
     padding-left: 10vw;
     padding-right: 10vw;
+    padding-bottom: 4em;
+  }
+
+  .error-dialog .dismiss {
+    top: 0.5em;
+    right: 1em;
   }
 
   #newsletter-form > div > form {

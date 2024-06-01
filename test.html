@@ -230,6 +230,7 @@
     </div>
 
     <script>
+      const SUPPORT_EMAIL = "tech@grattachecca.net";
       let scrollHeight = 0;
 
       function dialog(name, contents, error=false) {
@@ -307,8 +308,9 @@
               `
                 <div class="subtitle-bold">Email already registered</div>
                 <div style="padding-bottom: 0.7em;">An email cannot be registered twice!</div>
-                <div>If this is unexpected please write to:</div>
-                <div class="normal-text-bold">tech [at] grattachecca [dot] net</div>
+                <span>
+                  <div>Plase flag this to: <b>${SUPPORT_EMAIL}</b></div>
+                </span>
               `, 
               true
             );
@@ -323,8 +325,9 @@
               `
                 <div class="subtitle-bold">${res.status} error</div>
                 <div style="padding-bottom: 0.7em;">The server returned an unexpected error!</div>
-                <div>Plase flag this by writing an email to:</div>
-                <div class="normal-text-bold">tech [at] grattachecca [dot] net</div>
+                <span>
+                  <div>Plase flag this to: <b>${SUPPORT_EMAIL}</b></div>
+                </span>
               `,
               true
             );
@@ -336,8 +339,9 @@
             `
               <div class="subtitle-bold">500 error</div>
               <div style="padding-bottom: 0.7em;">The server returned an unexpected error!</div>
-              <div>Plase flag this by writing an email to:</div>
-              <div class="normal-text-bold">tech [at] grattachecca [dot] net</div>
+              <span>
+                <div>Plase flag this to: <b>${SUPPORT_EMAIL}</b></div>
+              </span>
             `,
             true
           );
