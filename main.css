@@ -187,6 +187,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
   box-shadow: 0vh 0vh 1em rgba(0,0,0,0.3);
   z-index: 1;
   padding: 7em;
+  width: calc(80vw - 14em);
 }
 
 .content-box > .gap {
@@ -199,7 +200,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
   
   flex-grow: 1;
   align-self: stretch;
-  width: 12em;
+  /*! width: 12em; */
 }
 
 .sideburn-right {
@@ -212,7 +213,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 
 .logo-title {
-  width: 20em;
+  width: 18em;
   padding-bottom: 2em;
   display: flex;
   justify-content: left;
@@ -232,7 +233,8 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 
 .section-welcome .rounded-corners {
-  height: 85vh;
+  height: 80vh;
+  flex-grow: 1;
 }
 
 .section-synopsis {
@@ -275,78 +277,45 @@ input[type="button"]:hover, input[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2em;
 }
 
-.section-characters > .single-character {
-  height: 90vh;
-  width: calc(90vh*var(--aspect-ratio));
-  position: relative;
+.section-characters .single-character {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 2.5em;
+  justify-content: center;
 }
 
 .section-characters > .single-character > img {
-  mix-blend-mode: multiply;
-  position: absolute;
+  width: 27%;
 }
 
-.section-characters > .gio > div {
-  width: 40vh;
-  top: 9vh;
-  left: 48vh;
-  position: absolute;
+.section-characters > .single-character > div {
+  width: 35%;
 }
 
-.section-characters .gio-sitting {
-  height: 44vh;
-  top: 7vh;
-  left: 8vh;
-}
-.section-characters .gio-couch {
-  height: 39vh;
-  bottom: 2vh;
-  right: 6vh;
-}
-.section-characters .gio-crossarms {
-  height: 27vh;
-  bottom: 8vh;
-  left: 22vh;
-}
-.section-characters .gio-crosslegged {
-  height: 39vh;
-  top: 5vh;
-  right: 8vh;
+.section-characters > .gio > .gio-couch {
+  width: 64%;
 }
 
-.section-characters > .marco > div {
-  width: 35vh;
-  top: 5vh;
-  left: 46vh;
-  position: absolute;
+.section-characters > .gio > .gio-crossarms {
+  padding-bottom: 4em;
 }
 
-.section-characters .marco-reading-map {
-  height: 45vh;
-  top: 43vh;
-  left: 60vh;
+.section-characters > .gio > .gio-crosslegged {
+  width: 24%
 }
-.section-characters .marco-sitting {
-  height: 34vh;
-  top: 52vh;
-  left: 13vh;
+
+.section-characters > .marco > .marco-reading-map {
+  width: 24%;
 }
-.section-characters .marco-standing-back {
-  height: 63vh;
-  top: 21vh;
-  left: 83vh;
+.section-characters > .marco > .marco-standing-back {
+  width: 23%;
 }
-.section-characters .marco-standing-front {
-  height: 63vh;
-  top: 5vh;
-  left: 109vh;
-}
-.section-characters .marco-sweating {
-  height: 37vh;
-  top: 11vh;
-  left: 2vh;
+.section-characters > .marco > .marco-standing-front {
+  width: 20%;
 }
 
 .section-living-room {
@@ -438,7 +407,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
   padding-bottom: 0.5em;
 }
 
-@media (max-aspect-ratio: 7/4) {
+@media (max-aspect-ratio: 7/4) or (max-width: 1200px) {
   .sideburn {
     background-image: unset;
   }
@@ -449,7 +418,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
   }
 }
 
-@media (max-aspect-ratio: 11/8) {
+@media (max-aspect-ratio: 11/8) or (max-width: 850px) {
 
   .logo-title {
     width: 80vw;
@@ -554,10 +523,16 @@ input[type="button"]:hover, input[type="submit"]:hover {
   }
 
   .section-characters > .single-character > img {
-    position: unset;
     max-width: 700px;
-    width: 90vw;
     align-self: center;
+  }
+
+  .section-characters > .gio > .gio-crosslegged {
+    width: 90vw;
+  }
+
+  .section-characters > .marco > .marco-reading-map {
+    width: 90vw;
   }
 
   .section-characters > .single-character > div {
