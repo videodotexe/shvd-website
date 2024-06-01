@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -229,44 +230,65 @@
     </div>
 
     <script>
+      let scrollHeight = 0;
+
       function showNewsletterForm() {
-        const newsletterForm = document.createElement("div");
-        newsletterForm.className = "popup";
-        newsletterForm.id = "newsletter-form"
-        newsletterForm.innerHTML = `
-          <div class="newsletter-form">
-            <div class="dismiss" onclick="dismissPopup('newsletter-form')">
+        dialog("newsletter-form", `
+          <div class="subtitle-bold">Newsletter subscription</div>
+          <form>
+            <input type="email" placeholder="Email" />
+            <input type="submit" value="Subscribe" />
+          </form>
+          <div class="terms">
+            By clicking subscribe you accept this, that and this other thing according to our privacy policy.
+            You will be able to unsubscribe at any time.
+          </div>
+        `);
+      }
+
+      function dialog(name, contents) {
+        const element = document.createElement("div");
+        element.className = "popup";
+        element.id = name
+        element.innerHTML = `
+          <div class="${name}">
+            <div class="dismiss" onclick="dismissPopup('${name}')">
               &Cross;
             </div>
-            <div class="subtitle-bold">Newsletter subscription</div>
-            <form>
-              <input type="email" placeholder="Email" />
-              <input type="submit" value="Subscribe" />
-            </form>
-            <div class="terms">
-              By clicking subscribe you accept this, that and this other thing according to our privacy policy.
-              You will be able to unsubscribe at any time.
-            </div>
+            ${contents}
           </div>
         `;
-        document.body.appendChild(newsletterForm);
-
+        document.body.appendChild(element);
         setScrolling(false);
+        document.addEventListener("keyup", dismissPopupOnEsc.bind(name));
+        return element;
+      }
+
+      function dismissPopupOnEsc(event) {
+        if(event.key == "Escape") {
+          dismissPopup(this);
+        }
       }
 
       function dismissPopup(popupId) {
         const popup = document.getElementById(popupId);
         popup.remove();
-        
+        document.removeEventListener("keyup", dismissPopupOnEsc);
         setScrolling(true);
       }
 
       function setScrolling(scrolling) {
         if(scrolling) {
           document.body.style.position = "relative";
-          
+          document.body.style.top = "0px";
+          window.scroll(0, scrollHeight);
+          document.body.style.overflowY = "auto";
         } else {
+          scrollHeight = window.scrollY;
+          window.scroll(0, 0);
           document.body.style.position = "fixed";
+          document.body.style.top = `-${scrollHeight}px`;
+          document.body.style.overflowY = "scroll";
         }
       }
     </script>
