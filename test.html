@@ -232,27 +232,14 @@
     <script>
       let scrollHeight = 0;
 
-      function showNewsletterForm() {
-        dialog("newsletter-form", `
-          <div class="subtitle-bold">Newsletter subscription</div>
-          <form>
-            <input type="email" placeholder="Email" />
-            <input type="submit" value="Subscribe" />
-          </form>
-          <div class="terms">
-            By clicking subscribe you accept this, that and this other thing according to our privacy policy.
-            You will be able to unsubscribe at any time.
-          </div>
-        `);
-      }
-
-      function dialog(name, contents) {
+      function dialog(name, contents, error=false) {
         const element = document.createElement("div");
-        element.className = "popup";
+        element.classList.add("dialog");
+        if (error) element.classList.add("error-dialog");
         element.id = name
         element.innerHTML = `
-          <div class="${name}">
-            <div class="dismiss" onclick="dismissPopup('${name}')">
+          <div>
+            <div class="dismiss" onclick="dismissDialog('${name}')">
               &Cross;
             </div>
             ${contents}
@@ -260,20 +247,12 @@
         `;
         document.body.appendChild(element);
         setScrolling(false);
-        document.addEventListener("keyup", dismissPopupOnEsc.bind(name));
         return element;
       }
 
-      function dismissPopupOnEsc(event) {
-        if(event.key == "Escape") {
-          dismissPopup(this);
-        }
-      }
-
-      function dismissPopup(popupId) {
-        const popup = document.getElementById(popupId);
-        popup.remove();
-        document.removeEventListener("keyup", dismissPopupOnEsc);
+      function dismissDialog(dialogId) {
+        const dialog = document.getElementById(dialogId);
+        dialog.remove();
         setScrolling(true);
       }
 
@@ -290,6 +269,81 @@
           document.body.style.top = `-${scrollHeight}px`;
           document.body.style.overflowY = "scroll";
         }
+      }
+
+      function showNewsletterForm() {
+        const emailElemId = "newsletter-form-email";
+        const popupId = "newsletter-form";
+        dialog(popupId, `
+          <div class="subtitle-bold">Newsletter subscription</div>
+          <form onsubmit="return submitEmailAddress('${emailElemId}', '${popupId}');">
+            <input type="email" placeholder="Email" id="${emailElemId}" />
+            <input type="submit" value="Subscribe" />
+          </form>
+          <div class="terms">
+            By clicking subscribe you accept this, that and this other thing
+            according to our privacy policy. You will be able to unsubscribe at
+            any time.
+          </div>
+        `);
+      }
+
+      function submitEmailAddress(emailElemId, dialogId) {
+        const apiUrl = "https://api.grattachecca.net/subscribe"
+        const emailElem = document.getElementById(emailElemId);
+        const email = emailElem.value;
+        const body = {email: email}
+        fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        }).then(res => {
+          dismissDialog(dialogId);
+          if(res.status == 409) {
+            dialog(
+              "known-email",
+              `
+                <div class="subtitle-bold">Email already registered</div>
+                <div style="padding-bottom: 0.7em;">An email cannot be registered twice!</div>
+                <div>If this is unexpected please write to:</div>
+                <div class="normal-text-bold">tech [at] grattachecca [dot] net</div>
+              `, 
+              true
+            );
+          } else if (res.ok) {
+            dialog("registration-success", `
+              <div class="subtitle-bold">Thank you!</div>
+              <div>Your email address has been succesfully submitted, you'll receive a confirmation email soon.</div>
+            `);
+          } else {
+            dialog(
+              "unknown-error-popup",
+              `
+                <div class="subtitle-bold">${res.status} error</div>
+                <div style="padding-bottom: 0.7em;">The server returned an unexpected error!</div>
+                <div>Plase flag this by writing an email to:</div>
+                <div class="normal-text-bold">tech [at] grattachecca [dot] net</div>
+              `,
+              true
+            );
+          }
+        }).catch(res => {
+          dismissDialog(dialogId);
+          dialog(
+            "unknown-error-popup",
+            `
+              <div class="subtitle-bold">500 error</div>
+              <div style="padding-bottom: 0.7em;">The server returned an unexpected error!</div>
+              <div>Plase flag this by writing an email to:</div>
+              <div class="normal-text-bold">tech [at] grattachecca [dot] net</div>
+            `,
+            true
+          );
+        });
+
+        return false;
       }
     </script>
   </body>

@@ -116,7 +116,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 
 
-.popup {
+.dialog {
   width: 100vw;
   height: 100vh;
 
@@ -131,16 +131,17 @@ input[type="button"]:hover, input[type="submit"]:hover {
   justify-content: center;
 }
 
-.popup > div {
+.dialog > div {
   border-radius: 1.5em;
   background: white;
   padding: 3em;
   padding-top: 2.5em;
   width: 70vw;
   max-width: 30em;
+  position: relative;
 }
 
-.popup .dismiss {
+.dialog .dismiss {
   font-size: xx-large;
   position: absolute;
   top: 0em;
@@ -151,26 +152,32 @@ input[type="button"]:hover, input[type="submit"]:hover {
   -webkit-user-select: none;
 }
 
-.newsletter-form {
-  position: relative;
-}
-
-.newsletter-form > .subtitle-bold {
+.dialog .subtitle-bold {
   text-align: center;
   padding-bottom: 0.6em;
 }
 
-.newsletter-form > form {
+.error-dialog > div {
+  outline: 0.5em solid #e34d4d;
+  outline-offset: -1em;
+}
+
+.error-dialog .dismiss {
+  top: 1em;
+  right: 1.5em;
+}
+
+#newsletter-form > div > form {
   display: flex;
   margin: 1em 0em;
   gap: 0.6em;
 }
 
-.newsletter-form > form > input[type="email"] {
+#newsletter-form > div > form > input[type="email"] {
   flex-grow: 1;
 } 
 
-.newsletter-form > .terms {
+#newsletter-form > div > .terms {
   font-size: medium;
   text-align: center;
   color: grey;
@@ -633,11 +640,11 @@ input[type="button"]:hover, input[type="submit"]:hover {
     width: 1.7em;
   }
 
-  .popup {
+  .dialog {
     align-items: end;
   }
 
-  .popup > div {
+  .dialog > div {
     width: 100vw;
     max-width: unset;
     border-bottom-left-radius: 0em;
@@ -647,7 +654,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
     padding-right: 10vw;
   }
 
-  .newsletter-form > form {
+  #newsletter-form > div > form {
     flex-direction: column;
   }
 }
