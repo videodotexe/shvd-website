@@ -277,45 +277,50 @@ input[type="button"]:hover, input[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
+  gap: 4em;
 }
 
 .section-characters .single-character {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  column-gap: 2.5em;
   justify-content: center;
+  gap: 1em;
 }
 
-.section-characters > .single-character > img {
+.section-characters .single-character > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+
+.section-characters .single-character > div > div {
+  width: 30%;
+}
+
+.section-characters .single-character > div > img {
+  width: 30%;
+}
+
+.section-characters .single-character > div > .gio-crosslegged {
   width: 27%;
 }
 
-.section-characters > .single-character > div {
-  width: 35%;
+.section-characters .single-character > div > .gio-crossarms {
+  padding-bottom: 1em;
 }
 
-.section-characters > .gio > .gio-couch {
-  width: 64%;
+.section-characters .single-character > div > .gio-couch {
+  width: 62%;
 }
 
-.section-characters > .gio > .gio-crossarms {
-  padding-bottom: 4em;
+.section-characters .single-character > .marco-second-row > img {
+  width: 27%;
 }
 
-.section-characters > .gio > .gio-crosslegged {
-  width: 24%
-}
-
-.section-characters > .marco > .marco-reading-map {
-  width: 24%;
-}
-.section-characters > .marco > .marco-standing-back {
+.section-characters .single-character > div > .marco-standing-front {
   width: 23%;
-}
-.section-characters > .marco > .marco-standing-front {
-  width: 20%;
 }
 
 .section-living-room {
@@ -538,12 +543,19 @@ input[type="button"]:hover, input[type="submit"]:hover {
   .section-characters > .single-character > div {
     position: unset;
     width: unset;
+    flex-direction: column;
+    gap: unset;
+  }
+
+  .section-characters .single-character > div > div {
+    width: unset;
     padding: 2em;
   }
 
-  .section-characters .gio-crosslegged {
-    height: unset;
+  .section-characters .single-character > div > .gio-crosslegged {
+    width: 90vw;
   }
+
   .section-characters .gio-sitting {
     visibility: collapse;
     height: 0vh;
@@ -557,9 +569,10 @@ input[type="button"]:hover, input[type="submit"]:hover {
     height: 0vh;
   }
 
-  .section-characters .marco-reading-map {
-    height: unset;
+  .section-characters .single-character > div > .marco-reading-map {
+    width: 90vw;
   }
+
   .section-characters .marco-sitting {
     visibility: collapse;
     height: 0vh;
