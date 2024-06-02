@@ -293,6 +293,21 @@
         `);
       }
 
+      function errorDialog(errorName) {
+        const newDialog = dialog(
+          "unknown-error-popup",
+          `
+            <div class="subtitle-bold">${errorName} error</div>
+            <div style="padding-bottom: 0.7em;">The server returned an unexpected error! Try again later.</div>
+            <span>
+              <div>Please flag this to: ${SUPPORT_EMAIL}</div>
+            </span>
+          `,
+          true
+        );
+        return newDialog;
+      }
+
       function submitEmailAddress(emailElemId, dialogId, submitElemId) {
 
         submitElem = document.getElementById(submitElemId);
@@ -330,31 +345,11 @@
               <div>Your email address has been succesfully submitted, you'll receive a confirmation email soon.</div>
             `);
           } else {
-            dialog(
-              "unknown-error-popup",
-              `
-                <div class="subtitle-bold">${res.status} error</div>
-                <div style="padding-bottom: 0.7em;">The server returned an unexpected error!</div>
-                <span>
-                  <div>Please flag this to: ${SUPPORT_EMAIL}</div>
-                </span>
-              `,
-              true
-            );
+            errorDialog(res.status);
           }
         }).catch(res => {
           dismissDialog(dialogId);
-          dialog(
-            "unknown-error-popup",
-            `
-              <div class="subtitle-bold">Unknown communication error</div>
-              <div style="padding-bottom: 0.7em;">It was impossible to communicate with the server! Try again later.</div>
-              <span>
-                <div>Please flag this to: ${SUPPORT_EMAIL}</div>
-              </span>
-            `,
-            true
-          );
+          errorDialog("Internal server");
         });
 
         return false;
