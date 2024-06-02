@@ -230,7 +230,7 @@
     </div>
 
     <script>
-      const SUPPORT_EMAIL = "tech@grattachecca.net";
+      const SUPPORT_EMAIL = `<a href="mailto:tech@grattachecca.net">tech@grattachecca.net</a>`;
       let scrollHeight = 0;
 
       function dialog(name, contents, error=false) {
@@ -274,12 +274,13 @@
 
       function showNewsletterForm() {
         const emailElemId = "newsletter-form-email";
-        const popupId = "newsletter-form";
-        dialog(popupId, `
+        const dialogId = "newsletter-form";
+        const submitElemId = "newsletter-submit-btn";
+        dialog(dialogId, `
           <div class="subtitle-bold">Newsletter subscription</div>
-          <form onsubmit="return submitEmailAddress('${emailElemId}', '${popupId}');">
+          <form onsubmit="return submitEmailAddress('${emailElemId}', '${dialogId}', '${submitElemId}');">
             <input type="email" placeholder="Email" id="${emailElemId}" />
-            <input type="submit" value="Subscribe" />
+            <input type="submit" value="Subscribe" id="${submitElemId}"/>
           </form>
           <div class="terms">
             By clicking subscribe you accept this, that and this other thing
@@ -289,11 +290,17 @@
         `);
       }
 
-      function submitEmailAddress(emailElemId, dialogId) {
-        const apiUrl = "https://api.grattachecca.net/subscribe"
+      function submitEmailAddress(emailElemId, dialogId, submitElemId) {
+
+        submitElem = document.getElementById(submitElemId);
+        submitElem.style.width = `${submitElem.offsetWidth}px`;
+        submitElem.style.height = `${submitElem.offsetHeight}px`;
+        submitElem.value = "⏳";
+
+        const apiUrl = "https://api.grattachecca.net/subscribe";
         const emailElem = document.getElementById(emailElemId);
         const email = emailElem.value;
-        const body = {email: email}
+        const body = {email: email};
         fetch(apiUrl, {
           method: "POST",
           headers: {
@@ -309,7 +316,7 @@
                 <div class="subtitle-bold">Email already registered</div>
                 <div style="padding-bottom: 0.7em;">An email cannot be registered twice!</div>
                 <span>
-                  <div>Plase flag this to: <b>${SUPPORT_EMAIL}</b></div>
+                  <div>If this is unexpected, write to: ${SUPPORT_EMAIL}</div>
                 </span>
               `, 
               true
@@ -326,7 +333,7 @@
                 <div class="subtitle-bold">${res.status} error</div>
                 <div style="padding-bottom: 0.7em;">The server returned an unexpected error!</div>
                 <span>
-                  <div>Plase flag this to: <b>${SUPPORT_EMAIL}</b></div>
+                  <div>Please flag this to: ${SUPPORT_EMAIL}</div>
                 </span>
               `,
               true
@@ -337,10 +344,10 @@
           dialog(
             "unknown-error-popup",
             `
-              <div class="subtitle-bold">500 error</div>
-              <div style="padding-bottom: 0.7em;">The server returned an unexpected error!</div>
+              <div class="subtitle-bold">Unknown communication error</div>
+              <div style="padding-bottom: 0.7em;">It was impossible to communicate with the server! Try again later.</div>
               <span>
-                <div>Plase flag this to: <b>${SUPPORT_EMAIL}</b></div>
+                <div>Please flag this to: ${SUPPORT_EMAIL}</div>
               </span>
             `,
             true
