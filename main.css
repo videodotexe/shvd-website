@@ -67,6 +67,19 @@ input[type="button"]:hover, input[type="submit"]:hover {
   color: black;
 }
 
+input:disabled {
+  background-color: lightgray;
+  color: darkgrey;
+  border-color: darkgrey;
+}
+
+input:disabled:hover {
+  background-color: lightgray;
+  color: darkgrey;
+  border-color: darkgrey;
+  cursor: unset;
+}
+
 .rounded-corners {
   border-radius: 1.5em;
 }
