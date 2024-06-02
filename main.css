@@ -228,6 +228,7 @@ b, .normal-text-bold {
 
 .logo-title {
   width: 18em;
+  max-width: 100%;
   padding-bottom: 2em;
   display: flex;
   justify-content: left;
@@ -243,12 +244,15 @@ b, .normal-text-bold {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 5em;
+  gap: 1em;
+}
+
+.section-welcome > div {
+  max-width: 24vw;
 }
 
 .section-welcome .rounded-corners {
   height: 80vh;
-  flex-grow: 1;
 }
 
 .section-synopsis {
@@ -338,7 +342,7 @@ b, .normal-text-bold {
 }
 
 .section-living-room {
-  width: 75%;
+  width: 90%;
 }
 
 .section-living-room > div {
@@ -495,6 +499,7 @@ b, .normal-text-bold {
 
   .section-welcome > div {
     padding: 3em;
+    max-width: unset;
   }
 
   .section-welcome .normal-text {
