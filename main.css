@@ -110,8 +110,11 @@ input[type="button"]:hover, input[type="submit"]:hover {
   font-size: large;
 }
 
+a {
+  color: inherit;
+}
 
-.normal-text-bold {
+b, .normal-text-bold {
   font-weight: 400;
 }
 
@@ -154,7 +157,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 
 .dialog .subtitle-bold {
   text-align: center;
-  padding-bottom: 0.6em;
+  padding-bottom: 1em;
 }
 
 .error-dialog > div {
@@ -163,8 +166,8 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 
 .error-dialog .dismiss {
-  top: 1em;
-  right: 1.5em;
+  top: 0.5em;
+  right: 1em;
 }
 
 .error-dialog span {
@@ -173,8 +176,8 @@ input[type="button"]:hover, input[type="submit"]:hover {
 
 #newsletter-form > div > form {
   display: flex;
-  margin: 1em 0em;
   gap: 0.6em;
+  margin-bottom: 1em;
 }
 
 #newsletter-form > div > form > input[type="email"] {
@@ -369,6 +372,18 @@ input[type="button"]:hover, input[type="submit"]:hover {
 
 .section-contacts > .normal-text {
   padding-bottom: 1em;
+}
+
+.section-contacts .email-presenter {
+  margin-top: 1.5em;
+  text-align: unset;
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.section-contacts .email-presenter > img {
+  padding-top: 0.2em;
 }
 
 .newsletter {
@@ -658,11 +673,6 @@ input[type="button"]:hover, input[type="submit"]:hover {
     padding-left: 10vw;
     padding-right: 10vw;
     padding-bottom: 4em;
-  }
-
-  .error-dialog .dismiss {
-    top: 0.5em;
-    right: 1em;
   }
 
   #newsletter-form > div > form {
