@@ -282,7 +282,7 @@
         dialog(dialogId, `
           <div class="subtitle-bold">Newsletter subscription</div>
           <form onsubmit="return submitEmailAddress('${emailElemId}', '${dialogId}', '${submitElemId}');">
-            <input type="email" placeholder="Email" id="${emailElemId}" />
+            <input type="email" placeholder="Email" id="${emailElemId}" required />
             <input type="submit" value="Subscribe" id="${submitElemId}"/>
           </form>
           <div class="terms">
@@ -309,14 +309,16 @@
       }
 
       function submitEmailAddress(emailElemId, dialogId, submitElemId) {
-
-        submitElem = document.getElementById(submitElemId);
-        submitElem.style.width = `${submitElem.offsetWidth}px`;
-        submitElem.style.height = `${submitElem.offsetHeight}px`;
-        submitElem.value = "⏳";
-
         const apiUrl = "https://api.grattachecca.net/subscribe";
         const emailElem = document.getElementById(emailElemId);
+        const submitElem = document.getElementById(submitElemId);
+
+        emailElem.disabled = true;
+        submitElem.style.width = `${submitElem.offsetWidth}px`;
+        submitElem.style.height = `${submitElem.offsetHeight}px`;
+        submitElem.disabled = true;
+        submitElem.value="Loading...";
+
         const email = emailElem.value;
         const body = {email: email};
         fetch(apiUrl, {
