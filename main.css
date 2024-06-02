@@ -374,6 +374,18 @@ b, .normal-text-bold {
   padding-bottom: 1em;
 }
 
+.section-contacts .email-presenter {
+  margin-top: 1.5em;
+  text-align: unset;
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.section-contacts .email-presenter > img {
+  padding-top: 0.2em;
+}
+
 .newsletter {
   padding-bottom: 9em;
 }
