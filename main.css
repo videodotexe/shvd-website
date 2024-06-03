@@ -418,7 +418,7 @@ b, .normal-text-bold {
 .team-member {
   display: flex;
   align-items: center;
-  gap: 3em;
+  gap: 4em;
 }
 
 .team-member .subtitle-bold {
@@ -455,18 +455,7 @@ b, .normal-text-bold {
   padding-bottom: 0.5em;
 }
 
-@media (max-aspect-ratio: 7/4) or (max-width: 1200px) {
-  .sideburn {
-    background-image: unset;
-  }
-
-  .content-box {
-    box-shadow: unset;
-    width: 100vw;
-  }
-}
-
-@media (max-aspect-ratio: 11/8) or (max-width: 850px) {
+@media (max-width: 100em) {
 
   .logo-title {
     width: 80vw;
@@ -478,24 +467,19 @@ b, .normal-text-bold {
   }
 
   .rounded-corners {
-    border-radius: unset;
-    width: 100vw;
+    width: calc(100% - 4em);
     object-fit: cover;
     height: unset;
   }
 
   .content-box {
-    width: 100vw;
+    width: 80vw;
     box-shadow: unset;
     padding: unset;
   }
 
   .content-box > .gap {
     height: 3em;
-  }
-
-  .sideburn {
-    visibility: collapse;
   }
 
   .section-welcome {
@@ -535,12 +519,12 @@ b, .normal-text-bold {
     order: 2;
     padding: unset;
     height: unset;
-    width: 41vw;
+    width: 41%;
   }
 
   .section-synopsis .gio {
     order: 1;
-    width: 40vw;
+    width: 40%;
     height: unset;
     padding-bottom: 4vw;
   }
@@ -549,6 +533,7 @@ b, .normal-text-bold {
     padding: unset;
     flex-direction: column;
     gap: 0px;
+    width: 100%;
   }
   
   .section-setting > img {
@@ -560,13 +545,12 @@ b, .normal-text-bold {
   }
 
   .section-characters {
-    width: 100vw;
+    width: 100%;
     gap: unset;
   }
 
   .section-characters > .single-character {
     height: unset;
-    width: 100vw;
     position: unset;
     display: flex;
     flex-direction: column;
@@ -598,7 +582,7 @@ b, .normal-text-bold {
   }
 
   .section-characters .single-character > div > .gio-crosslegged {
-    width: 90vw;
+    width: 90%;
   }
 
   .section-characters .gio-sitting {
@@ -615,7 +599,7 @@ b, .normal-text-bold {
   }
 
   .section-characters .single-character > div > .marco-reading-map {
-    width: 90vw;
+    width: 90%;
   }
 
   .section-characters .marco-sitting {
@@ -636,19 +620,20 @@ b, .normal-text-bold {
   }
   
   .section-living-room {
-    width: unset;
+    width: calc(100% - 4em);
   }
 
   .section-living-room > div {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   .section-living-room > div > img {
     padding: unset;
     height: unset;
-    width: 120vw;
     object-fit: cover;
+    margin: 1em 0em;
   }
 
   .section-contacts {
@@ -664,7 +649,7 @@ b, .normal-text-bold {
   }
 
   .section-team {
-    gap: 4em;
+    gap: 5em;
     padding: unset;
     padding-bottom: 8em;
   }
@@ -672,10 +657,32 @@ b, .normal-text-bold {
   .team-member {
     flex-direction: column;
     width: 70%;
+    gap: 1em;
   }
 
   .team-member .socials img {
     width: 1.7em;
+  }
+
+}
+
+@media (max-width: 80em) {
+  .sideburn {
+    background-image: unset;
+  }
+
+  .content-box {
+    box-shadow: unset;
+    width: 100vw;
+  }
+
+  .rounded-corners {
+    border-radius: unset;
+    width: 100%;
+  }
+
+  .section-living-room {
+    width: 130%;
   }
 
   .dialog {
@@ -696,4 +703,4 @@ b, .normal-text-bold {
   #newsletter-form > div > form {
     flex-direction: column;
   }
-}
+} 
