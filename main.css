@@ -213,8 +213,8 @@ b, .normal-text-bold {
   background: white;
   box-shadow: 0vh 0vh 1em rgba(0,0,0,0.3);
   z-index: 1;
-  padding: 7em;
-  width: calc(80vw - 14em);
+  padding: 6em;
+  width: calc(80vw - 12em);
 }
 
 .content-box > .gap {
@@ -252,7 +252,7 @@ b, .normal-text-bold {
 }
 
 .section-welcome {
-  height: calc(100vh - 14em);
+  height: calc(100vh - 12em);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -309,6 +309,7 @@ b, .normal-text-bold {
   flex-direction: column;
   align-items: center;
   gap: 4em;
+  width: calc(100% + 6em);
 }
 
 .section-characters .single-character {
@@ -455,7 +456,20 @@ b, .normal-text-bold {
   padding-bottom: 0.5em;
 }
 
+/* Narrow */
 @media (max-width: 100em) {
+  .content-box {
+    padding: 4em;
+    width: calc(80vw - 8em);
+  }
+
+  .section-welcome {
+    height: calc(100vh - 8em);
+  }
+}
+
+/* One column */
+@media (max-width: 90em) {
 
   .logo-title {
     width: 80vw;
@@ -582,7 +596,7 @@ b, .normal-text-bold {
   }
 
   .section-characters .single-character > div > .gio-crosslegged {
-    width: 90%;
+    width: 50%;
   }
 
   .section-characters .gio-sitting {
@@ -599,7 +613,7 @@ b, .normal-text-bold {
   }
 
   .section-characters .single-character > div > .marco-reading-map {
-    width: 90%;
+    width: 50%;
   }
 
   .section-characters .marco-sitting {
@@ -666,7 +680,8 @@ b, .normal-text-bold {
 
 }
 
-@media (max-width: 80em) {
+/* Mobile */
+@media (max-width: 60em) {
   .sideburn {
     background-image: unset;
   }
@@ -679,6 +694,14 @@ b, .normal-text-bold {
   .rounded-corners {
     border-radius: unset;
     width: 100%;
+  }
+
+  .section-characters .single-character > div > .gio-crosslegged {
+    width: 90%;
+  }
+
+  .section-characters .single-character > div > .marco-reading-map {
+    width: 90%;
   }
 
   .section-living-room {
