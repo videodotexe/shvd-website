@@ -262,6 +262,7 @@ b, .normal-text-bold {
 
 .section-welcome > div {
   max-width: 24vw;
+  flex-grow: 1;
 }
 
 .section-welcome .rounded-corners {
@@ -439,8 +440,7 @@ b, .normal-text-bold {
 }
 
 .team-member .socials img {
-  outline: 0.07em solid black;
-  outline-offset: -0.03em;
+  border: 0.07em solid black;
   border-radius: 10vh;
   width: 1.5em;
 
@@ -448,8 +448,8 @@ b, .normal-text-bold {
 }
 
 .team-member .socials img:hover {
-  outline-color: white;
   filter: invert(1);
+  border-color: white;
 }
 
 .team-member .normal-text-bold {

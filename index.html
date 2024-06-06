@@ -1,36 +1,405 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta 
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <title>Grattachecca</title>
-    <style>
-      * {
-          font-family: Arial, Helvetica, sans-serif;
-      }
-
-      html, body {
-          height: 100%;
-          width: 100%;
-
-          margin: 0px;
-          border: 0px;
-          padding: 0px;
-      }
-
-      body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
-    </style>
+    <link href="main.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="content-box">
-      <div>
-        <h1>Grattachecca</h1>
-        <h2>/ˌɡrat.taˈkek.ka/</h2>
+    <div class="scrollable-body">
+      <div class="sideburn sideburn-left"></div>
+      <div class="content-box">
+        <div class="section-welcome">
+          <img src="./media/images/01-01-34_c.jpg" class="rounded-corners"/>
+          <div>
+            <div class="logo-title">
+              <img src="./media/logo.svg"/>
+            </div>
+            <div class="subtitle">/&#716;grat.ta&#712;kek.ka/</div>
+            <div>
+              Summer, sibling love, shaved ice. <br />
+              An animated short in pre-production.
+            </div>
+          </div>
+        </div>
+        
+        <div class="gap"></div>
+        
+
+        <div class="section-synopsis">
+          <img class="gio" src="./media/images/gio/01-02-15_c.png"/>
+          <div>
+            <div class="title-small">Synopsis</div>
+            <div>
+              Gio, and her big brother, Marco, live alone in a city they are yet
+              to call home. Summer's scorching sun prompts Marco on a quest to
+              make the heat bearable.
+            </div>
+          </div>
+          <img class="marco" src="./media/images/marco/01-02-18_c.png"/>
+        </div>
+        <div class="gap"></div>
+        
+        <div class="section-setting">
+          <div>
+            <div class="title-small">Setting</div>
+            <div>
+              A port city on the Southern European coast. The 60s, where
+              fridges were common but not AC.
+            </div>
+          </div>
+          <img class="rounded-corners" src="./media/images/01-01-31_c.jpg"/>
+        </div>
+        
+        <div class="gap"></div>
+        
+        <div class="section-characters">
+          <div class="title"><span>Characters</span></div>
+          <div class="gio single-character">
+            <div class="gio-first-row">
+              <img class="gio-sitting" src="./media/images/gio/gio_sitting.jpg" >
+              <div>
+                <div class="subtitle-bold">Gio</div>
+                <div>
+                  Distinctly quieter since moving to their new city, Gio longs
+                  for the comfort of home, both cooler and more familiar. Despite
+                  her strong and fierce exterior to the world, her love for Marco
+                  keeps them both grounded in their new home away from home.
+                </div>
+              </div>
+              <img class="gio-crosslegged" src="./media/images/gio/gio_crosslegged.jpg" />
+            </div>
+            <div class="gio-second-row">
+              <img class="gio-crossarms" src="./media/images/gio/gio_crossarms.jpg" />
+              <img class="gio-couch" src="./media/images/gio/gio_couch.jpg" />
+            </div>
+          </div>
+          <div class="marco single-character">
+            <div class="marco-first-row">
+              <img class="marco-sweating" src="./media/images/marco/marco_sweating.jpg" />
+              <div>
+                <div class="subtitle-bold">Marco</div>
+                <div>
+                  A long day of work in the sweltering heat of a nearby hotel
+                  restaurant doesn’t stop Marco’s from putting his sister first.
+                  Endlessly stoic, pragmatic, and resourceful, he helps remind
+                  Gio that life doesn’t always have to be so hard.
+                </div>
+              </div>
+              <img class="marco-sitting" src="./media/images/marco/marco_sitting.jpg" />
+            </div>
+            <div class="marco-second-row">
+              <img class="marco-standing-front" src="./media/images/marco/marco_standing_front.jpg" />
+              <img class="marco-reading-map" src="./media/images/marco/marco_reading_map.jpg" />
+              <img class="marco-standing-back" src="./media/images/marco/marco_standing_back.jpg" />
+            </div>
+          </div>
+        </div>
+        
+        <div class="gap"></div>
+        
+        <div class="section-living-room">
+          <div class="rounded-corners">
+            <img src="./media/images/01-01-29_c.jpg">
+          </div>
+        </div>
+        
+        <div class="gap"></div>
+        
+        <div class="section-contacts">
+          <div class="subtitle-bold">Grattachecca is in development</div>
+          <div class="normal-text-bold">Would you like to be kept updated?</div>
+          <div>
+            We are working hard to bring Grattachecca to life.<br />
+            Subscribe to the newsletter to stay in the loop.
+          </div>
+          <div class="newsletter">
+            <input type="button" value="Subscribe..." onclick="showNewsletterForm()" />
+          </div>
+          <div class="normal-text-bold">Alternatively, get in touch!</div>
+          <div>
+            Do you have any questions, proposals, iced dessert recs? <br />
+            Our inbox is always open.
+          </div>
+          <div class="email-presenter">
+            <img src="./media/images/icons/mail.svg" />
+            <a href="mailto:info@grattachecca.net" target="_blank">
+              <b>info@grattachecca.net</b>
+            </a>
+          </div>
+        </div>
+        
+        <div class="gap"></div>
+
+        <div class="section-team">
+          <div class="title"><span>Meet the team</span></div>
+          
+          <div class="team-member">
+            <img src="./media/images/people/giulio.jpg" />
+            <div>
+              <div class="subtitle-bold">Giulio Martella</div>
+              <div class="socials">
+                <a href="https://www.linkedin.com/in/gmartella/" target="_blank"><img src="./media/images/icons/linkedin_badge.png" /></a>
+                <a href="mailto:g.martella@grattachecca.net" target="_blank"><img src="./media/images/icons/mail_badge.png" /></a>
+              </div>
+              <div class="normal-text-bold">Director</div>
+              <div>
+                While reminiscing about his childhood summers spent in Rome,
+                Giulio came up with the idea for Grattachecca. Emigrating first
+                to Germany, then to the US and now living in the UK, he is
+                leveraging his experience in TV and Feature animation to conjure
+                images of nostalgia with a sprinkle of homesickness.
+              </div>
+            </div>
+          </div>
+          
+          <div class="team-member">
+            <img src="./media/images/people/oliver.jpg" />
+            <div>
+              <div class="subtitle-bold">Oliver Hulme</div>
+              <div class="socials">
+                <a href="https://www.linkedin.com/in/hulmeoliver/" target="_blank"><img src="./media/images/icons/linkedin_badge.png" /></a>
+                <a href="mailto:o.hulme@grattachecca.net" target="_blank"><img src="./media/images/icons/mail_badge.png" /></a>
+              </div>
+              <div class="normal-text-bold">Producer</div>
+              <div>
+                Oli moved to London from the North of England after studying
+                Natural Sciences at the University of Cambridge. His 5 years
+                experience in Feature Animation has seen him work on animated
+                projects for 20th Century Studios, Disney, Columbia Pictures,
+                Paramount Pictures, Netflix, and Warner Bros. In summer you can
+                find him, camera in hand, in a museum or dining outside the BFI
+                and soaking in the sun.
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="./media/images/people/alvaro.jpg" />
+            <div>
+              <div class="subtitle-bold">Álvaro Xoán Vidal Pazos</div>
+              <div class="small-subtitle">aka Alariko</div>
+              <div class="socials">
+                <a href="https://www.artstation.com/alariko" target="_blank"><img src="./media/images/icons/artstation_badge.png" /></a>
+                <a href="https://x.com/Alariko_" target="_blank"><img src="./media/images/icons/twitter_badge.png" /></a>
+                <a href="https://www.instagram.com/_alariko/" target="_blank"><img src="./media/images/icons/instagram_badge.png" /></a>
+              </div>
+              <div class="normal-text-bold">Environment visual designer</div>
+              <div>
+                Álvaro has always had a pencil in his hand, learning to draw
+                before he could read or speak. His fascination with architecture
+                is inspired by unique details in buildings, inhabited or abandoned.
+                This, and a bit of Google Maps, helps him create evocative designs
+                purely from memory. Since completing an illustration course at the
+                EASD "Pablo Picasso", he has been studying Fine Arts at the 
+                University of Salamanca.
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="./media/images/people/eden.jpg" />
+            <div>
+              <div class="subtitle-bold">Eden Hea-Ryung Chyun</div>
+              <div class="small-subtitle">aka Tulli</div>
+              <div class="socials">
+                <a href="https://www.artoftulli.com/" target="_blank"><img src="./media/images/icons/website_badge.png" /></a>
+                <a href="https://x.com/t_ulliok" target="_blank"><img src="./media/images/icons/twitter_badge.png" /></a>
+                <a href="https://www.instagram.com/t_ulliok/" target="_blank"><img src="./media/images/icons/instagram_badge.png" /></a>
+              </div>
+              <div class="normal-text-bold">Characters visual designer</div>
+              <div>
+                Eden is a Korean-American character designer, illustrator, and
+                fashion enthusiast based in Los Angeles, California. Queerness,
+                fantasy, intimacy, and their cultural background are major themes
+                in their wide variety of work in animation, games, comics, and
+                theatre. Outside of art, they also enjoy exploring communities
+                in their hometown and thrift shopping.
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="./media/images/people/howard.jpg" />
+            <div>
+              <div class="subtitle-bold">Howard Kung</div>
+              <div class="small-subtitle">aka Bixels</div>
+              <div class="socials">
+                <a href="https://howardanimations.wixsite.com/bixels" target="_blank"><img src="./media/images/icons/website_badge.png" /></a>
+                <a href="https://x.com/BixelsWixels" target="_blank"><img src="./media/images/icons/twitter_badge.png" /></a>
+              </div>
+              <div class="normal-text-bold">Story artist</div>
+              <div>
+                Howard is a Taiwanese-American storyboard artist, animator, and
+                character designer based in the Bay Area and San Diego. He is
+                currently attending Stanford University as an Art Practice and
+                Film & Media Studies double-major. Animation production has been
+                his passion since he was 10 years old, when he first began making
+                animated shorts. He loves 90s anime, analog technology, and Y2K
+                fashion!
+              </div>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img src="./media/images/people/federica.jpg" />
+            <div>
+              <div class="subtitle-bold">Federica Vommaro</div>
+              <div class="small-subtitle">aka PHYSALIArt</div>
+              <div class="socials">
+                <a href="https://www.linkedin.com/in/federica-vommaro/" target="_blank"><img src="./media/images/icons/linkedin_badge.png" /></a>
+                <a href="https://cara.app/physaliart" target="_blank"><img src="./media/images/icons/cara_badge.png" /></a>
+                <a href="https://federicav.artstation.com/" target="_blank"><img src="./media/images/icons/artstation_badge.png" /></a>
+                <a href="mailto:physalia.art@gmail.com" target="_blank"><img src="./media/images/icons/mail_badge.png" /></a>
+              </div>
+              <div class="normal-text-bold">Graphic Designer</div>
+              <div>
+                Federica, inspired by her childhood love of Sailor Moon, pursued
+                her love for drawing while studying at the International School
+                of Comics in her hometown of Rome. Since then she’s acted as a
+                concept artist for ILBE Animation on projects like "Il Segreto
+                di Liberato", "Mahmood", "Jipo & Baby Puffins", "Arctic Friends", and
+                "Puffins".
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-      <div>
-        Work in progress!
-      </div>
+      <div class="sideburn sideburn-right"></div>
     </div>
+
+    <script>
+      const SUPPORT_EMAIL = `<a href="mailto:tech@grattachecca.net" target="_blank">tech@grattachecca.net</a>`;
+      let scrollHeight = 0;
+
+      function dialog(name, contents, error=false) {
+        const element = document.createElement("div");
+        element.classList.add("dialog");
+        if (error) element.classList.add("error-dialog");
+        element.id = name
+        element.innerHTML = `
+          <div>
+            <div class="dismiss" onclick="dismissDialog('${name}')">
+              &Cross;
+            </div>
+            ${contents}
+          </div>
+        `;
+        document.body.appendChild(element);
+        setScrolling(false);
+        return element;
+      }
+
+      function dismissDialog(dialogId) {
+        const dialog = document.getElementById(dialogId);
+        dialog.remove();
+        setScrolling(true);
+      }
+
+      function setScrolling(scrolling) {
+        if(scrolling) {
+          document.body.style.position = "relative";
+          document.body.style.top = "0px";
+          window.scroll(0, scrollHeight);
+          document.body.style.overflowY = "auto";
+        } else {
+          scrollHeight = window.scrollY;
+          window.scroll(0, 0);
+          document.body.style.position = "fixed";
+          document.body.style.top = `-${scrollHeight}px`;
+          document.body.style.overflowY = "scroll";
+        }
+      }
+
+      function showNewsletterForm() {
+        const emailElemId = "newsletter-form-email";
+        const dialogId = "newsletter-form";
+        const submitElemId = "newsletter-submit-btn";
+        dialog(dialogId, `
+          <div class="subtitle-bold">Newsletter subscription</div>
+          <form onsubmit="return submitEmailAddress('${emailElemId}', '${dialogId}', '${submitElemId}');">
+            <input type="email" placeholder="Email" id="${emailElemId}" required />
+            <input type="submit" value="Subscribe" id="${submitElemId}"/>
+          </form>
+          <div class="terms">
+            By clicking subscribe you accept the terms relative to the 
+            newsletter detailed in our
+            <a href="./privacy.html">privacy policy</a>. You 
+            will be able to unsubscribe at any time by contact us via email at 
+            <a href="mailto:privacy@grattachecca.net">privacy@grattachecca.net</a>.
+          </div>
+        `);
+      }
+
+      function errorDialog(errorName) {
+        const newDialog = dialog(
+          "unknown-error-popup",
+          `
+            <div class="subtitle-bold">${errorName} error</div>
+            <div style="padding-bottom: 0.7em;">The server returned an unexpected error! Try again later.</div>
+            <span>
+              <div>Please flag this to: ${SUPPORT_EMAIL}</div>
+            </span>
+          `,
+          true
+        );
+        return newDialog;
+      }
+
+      function submitEmailAddress(emailElemId, dialogId, submitElemId) {
+        const apiUrl = "https://api.grattachecca.net/subscribe";
+        const emailElem = document.getElementById(emailElemId);
+        const submitElem = document.getElementById(submitElemId);
+
+        emailElem.disabled = true;
+        submitElem.style.width = `${submitElem.offsetWidth}px`;
+        submitElem.style.height = `${submitElem.offsetHeight}px`;
+        submitElem.disabled = true;
+        submitElem.value="Loading...";
+
+        const email = emailElem.value;
+        const body = {email: email};
+        fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        }).then(res => {
+          dismissDialog(dialogId);
+          if(res.status == 409) {
+            dialog(
+              "known-email",
+              `
+                <div class="subtitle-bold">Email already registered</div>
+                <div style="padding-bottom: 0.7em;">An email cannot be registered twice!</div>
+                <span>
+                  <div>If this is unexpected, write to: ${SUPPORT_EMAIL}</div>
+                </span>
+              `, 
+              true
+            );
+          } else if (res.ok) {
+            dialog("registration-success", `
+              <div class="subtitle-bold">Thank you!</div>
+              <div>Your email address has been succesfully submitted, you'll receive a confirmation email soon.</div>
+            `);
+          } else {
+            errorDialog(res.status);
+          }
+        }).catch(res => {
+          dismissDialog(dialogId);
+          errorDialog("Internal server");
+        });
+
+        return false;
+      }
+    </script>
   </body>
 </html>

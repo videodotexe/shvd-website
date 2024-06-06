@@ -1,0 +1,28 @@
+body {
+    width: unset;
+    margin: 7em 10em;
+}
+
+li {
+    padding-top: 0.5em;
+}
+
+.title-small {
+    padding-top: 1.2em;
+}
+
+.subtitle {
+    padding-top: 0.7em;
+    padding-bottom: 0.5em;
+}
+
+/* Mobile */
+@media (max-width: 60em) {
+    body {
+        margin: 3em 1em;
+    }
+
+    .title-small {
+        text-align: unset;
+    }
+}
