@@ -8,7 +8,7 @@ async function ae() {
     .then(ipInfo => {
 
         dataToSend = {
-            country: ipInfo.country_name,
+            country: ipInfo.country_code,
             latitude: ipInfo.latitude,
             longitude: ipInfo.longitude,
             screen_width: window.innerWidth,
