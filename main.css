@@ -251,7 +251,7 @@ b, .normal-text-bold {
   width: 100%;
 }
 
-.section-welcome {
+#section-welcome {
   height: calc(100vh - 12em);
   display: flex;
   align-items: center;
@@ -260,52 +260,52 @@ b, .normal-text-bold {
   gap: 1em;
 }
 
-.section-welcome > div {
+#section-welcome > div {
   max-width: 24vw;
   flex-grow: 1;
 }
 
-.section-welcome .rounded-corners {
+#section-welcome .rounded-corners {
   height: 80vh;
 }
 
-.section-synopsis {
+#section-synopsis {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4em;
 }
 
-.section-synopsis .gio {
+#section-synopsis .gio {
   height: 22em;
   align-self: flex-end;
   padding-bottom: 0.7em;
 }
 
-.section-synopsis .marco {
+#section-synopsis .marco {
   height: 31em;
   align-self: flex-end;
 }
 
-.section-synopsis > div {
+#section-synopsis > div {
   padding-bottom: 8em;
 }
 
-.section-setting {
+#section-setting {
   display: flex;
   align-items: center;
   gap: 4em;
 }
 
-.section-setting > img {
+#section-setting > img {
   height: 70vh;
 }
 
-.section-setting > div {
+#section-setting > div {
   padding-bottom: 8em;
 }
 
-.section-characters {
+#section-characters {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -313,7 +313,7 @@ b, .normal-text-bold {
   width: calc(100% + 6em);
 }
 
-.section-characters .single-character {
+#section-characters .single-character {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -321,79 +321,79 @@ b, .normal-text-bold {
   gap: 1em;
 }
 
-.section-characters .single-character > div {
+#section-characters .single-character > div {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4em;
 }
 
-.section-characters .single-character > div > div {
+#section-characters .single-character > div > div {
   width: 30%;
 }
 
-.section-characters .single-character > div > img {
+#section-characters .single-character > div > img {
   width: 30%;
 }
 
-.section-characters .single-character > div > .gio-crosslegged {
+#section-characters .single-character > div > .gio-crosslegged {
   width: 27%;
 }
 
-.section-characters .single-character > div > .gio-crossarms {
+#section-characters .single-character > div > .gio-crossarms {
   padding-bottom: 1em;
 }
 
-.section-characters .single-character > div > .gio-couch {
+#section-characters .single-character > div > .gio-couch {
   width: 62%;
 }
 
-.section-characters .single-character > .marco-second-row > img {
+#section-characters .single-character > .marco-second-row > img {
   width: 27%;
 }
 
-.section-characters .single-character > div > .marco-standing-front {
+#section-characters .single-character > div > .marco-standing-front {
   width: 23%;
 }
 
-.section-living-room {
+#section-living-room {
   width: 90%;
 }
 
-.section-living-room > div {
+#section-living-room > div {
   background-color: black;
 }
 
-.section-living-room > div > img {
+#section-living-room > div > img {
   padding: 1em;
   width: calc(100% - 2em);
 }
 
-.section-contacts {
+#section-contacts {
   padding-top: 2em;
 }
 
-.section-contacts input {
+#section-contacts input {
   margin-top: 1.5em;
 }
 
-.section-contacts > div {
+#section-contacts > div {
   text-align: center;
 }
 
-.section-contacts > .subtitle-bold {
+#section-contacts > .subtitle-bold {
   padding-bottom: .4em;
 }
 
-.section-contacts > .normal-text-bold {
+#section-contacts > .normal-text-bold {
   padding-bottom: 1.5em;
 }
 
-.section-contacts > .normal-text {
+#section-contacts > .normal-text {
   padding-bottom: 1em;
 }
 
-.section-contacts .email-presenter {
+#section-contacts .email-presenter {
   margin-top: 1.5em;
   text-align: unset;
   display: flex;
@@ -401,7 +401,7 @@ b, .normal-text-bold {
   gap: 0.4em;
 }
 
-.section-contacts .email-presenter > img {
+#section-contacts .email-presenter > img {
   padding-top: 0.2em;
 }
 
@@ -409,7 +409,7 @@ b, .normal-text-bold {
   padding-bottom: 9em;
 }
 
-.section-team {
+#section-team {
   padding: 4em;
   display: flex;
   flex-direction: column;
@@ -463,7 +463,7 @@ b, .normal-text-bold {
     width: calc(80vw - 8em);
   }
 
-  .section-welcome {
+  #section-welcome {
     height: calc(100vh - 8em);
   }
 }
@@ -496,7 +496,7 @@ b, .normal-text-bold {
     height: 3em;
   }
 
-  .section-welcome {
+  #section-welcome {
     width: 100%;
     height: unset;
     flex-direction: column-reverse;
@@ -504,157 +504,157 @@ b, .normal-text-bold {
     gap: unset;
   }
 
-  .section-welcome > .rounded-corners {
+  #section-welcome > .rounded-corners {
     height: unset;
   }
 
-  .section-welcome > div {
+  #section-welcome > div {
     padding: 3em;
     max-width: unset;
   }
 
-  .section-welcome .normal-text {
+  #section-welcome .normal-text {
     padding-bottom: unset;
     width: unset;
   }
 
-  .section-synopsis {
+  #section-synopsis {
     width: 100%;
     flex-wrap: wrap;
     gap: unset;
     justify-content: space-evenly;
   }
 
-  .section-synopsis > div {
+  #section-synopsis > div {
     padding: 2em;
   }
 
-  .section-synopsis .marco {
+  #section-synopsis .marco {
     order: 2;
     padding: unset;
     height: unset;
     width: 41%;
   }
 
-  .section-synopsis .gio {
+  #section-synopsis .gio {
     order: 1;
     width: 40%;
     height: unset;
     padding-bottom: 4vw;
   }
 
-  .section-setting {
+  #section-setting {
     padding: unset;
     flex-direction: column;
     gap: 0px;
     width: 100%;
   }
   
-  .section-setting > img {
+  #section-setting > img {
     height: unset;
   }
 
-  .section-setting > div {
+  #section-setting > div {
     padding: 2em;
   }
 
-  .section-characters {
+  #section-characters {
     width: 100%;
     gap: unset;
   }
 
-  .section-characters > .single-character {
+  #section-characters > .single-character {
     height: unset;
     position: unset;
     display: flex;
     flex-direction: column;
   }
 
-  .section-characters > .single-character > img {
+  #section-characters > .single-character > img {
     max-width: 700px;
     align-self: center;
   }
 
-  .section-characters > .gio > .gio-crosslegged {
+  #section-characters > .gio > .gio-crosslegged {
     width: 90vw;
   }
 
-  .section-characters > .marco > .marco-reading-map {
+  #section-characters > .marco > .marco-reading-map {
     width: 90vw;
   }
 
-  .section-characters > .single-character > div {
+  #section-characters > .single-character > div {
     position: unset;
     width: unset;
     flex-direction: column;
     gap: unset;
   }
 
-  .section-characters .single-character > div > div {
+  #section-characters .single-character > div > div {
     width: unset;
     padding: 2em;
   }
 
-  .section-characters .single-character > div > .gio-crosslegged {
+  #section-characters .single-character > div > .gio-crosslegged {
     width: 50%;
   }
 
-  .section-characters .gio-sitting {
+  #section-characters .gio-sitting {
     visibility: collapse;
     height: 0vh;
   }
-  .section-characters .gio-crossarms {
+  #section-characters .gio-crossarms {
     visibility: collapse;
     height: 0vh;
   }
-  .section-characters .gio-couch {
+  #section-characters .gio-couch {
     visibility: collapse;
     height: 0vh;
   }
 
-  .section-characters .single-character > div > .marco-reading-map {
+  #section-characters .single-character > div > .marco-reading-map {
     width: 50%;
   }
 
-  .section-characters .marco-sitting {
+  #section-characters .marco-sitting {
     visibility: collapse;
     height: 0vh;
   }
-  .section-characters .marco-standing-back {
+  #section-characters .marco-standing-back {
     visibility: collapse;
     height: 0vh;
   }
-  .section-characters .marco-standing-front {
+  #section-characters .marco-standing-front {
     visibility: collapse;
     height: 0vh;
   }
-  .section-characters .marco-sweating {
+  #section-characters .marco-sweating {
     visibility: collapse;
     height: 0vh;
   }
   
-  .section-living-room {
+  #section-living-room {
     width: calc(100% - 4em);
   }
 
-  .section-living-room > div {
+  #section-living-room > div {
     display: flex;
     justify-content: center;
     width: 100%;
   }
 
-  .section-living-room > div > img {
+  #section-living-room > div > img {
     padding: unset;
     height: unset;
     object-fit: cover;
     margin: 1em 0em;
   }
 
-  .section-contacts {
+  #section-contacts {
   padding: 3em;
   }
 
-  .section-contacts br {
+  #section-contacts br {
     display: none;
   }
 
@@ -662,7 +662,7 @@ b, .normal-text-bold {
     width: 80%;
   }
 
-  .section-team {
+  #section-team {
     gap: 5em;
     padding: unset;
     padding-bottom: 8em;
@@ -696,15 +696,15 @@ b, .normal-text-bold {
     width: 100%;
   }
 
-  .section-characters .single-character > div > .gio-crosslegged {
+  #section-characters .single-character > div > .gio-crosslegged {
     width: 90%;
   }
 
-  .section-characters .single-character > div > .marco-reading-map {
+  #section-characters .single-character > div > .marco-reading-map {
     width: 90%;
   }
 
-  .section-living-room {
+  #section-living-room {
     width: 130%;
   }
 
